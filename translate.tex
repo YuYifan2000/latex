@@ -1,0 +1,489 @@
+\documentclass[a4paper,12pt,onecolumn]{article}
+\usepackage{changepage}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{booktabs}
+\usepackage[labelfont=bf]{caption}
+\usepackage{indentfirst}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{subfigure}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage[version=4]{mhchem}
+\usepackage{multirow}
+\usepackage{longtable}
+
+
+% Please change the following fonts if they are not available.
+\setmainfont{Times New Roman}
+\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
+
+\addtolength{\topmargin}{-54pt}
+%\setlength{\textwidth}{18cm}
+%\setlength{\textheight}{30cm}
+\geometry{left=2cm} 
+\geometry{bottom=2cm} 
+\geometry{top=2cm} 
+\geometry{hcentering} 
+
+\renewcommand{\baselinestretch}{1.1}
+\parindent 2em
+
+\begin{document}
+
+\setlength{\textwidth}{15.50cm}
+\renewcommand\tablename{表}
+\renewcommand\figurename{图}
+
+\vspace{1cm}
+\textbf{\huge 第五章}
+
+\vspace{1.5cm}
+\textbf{\Huge 放射性性质}
+\setcounter{section}{5}
+
+\renewcommand {\contentsname}{本章大纲}
+%
+\vspace{1.5cm}
+\begin{center}
+\parbox{\textwidth}{
+    \begin{adjustwidth}{0.2cm}{0.2cm}
+    \begin{multicols*}{2}
+    \tableofcontents
+    \end{multicols*}
+    \end{adjustwidth}
+}
+\end{center}
+
+\renewcommand {\baselinestretch}{1.1}
+\renewcommand {\thetable} {\thesection{}.\arabic{table}}
+\renewcommand {\thefigure} {\thesection{}.\arabic{figure}}
+\renewcommand {\theequation} {\thesection{}.\arabic{equation}}
+\setcounter{subsection}{0}
+\subsection{\large 基本概念}
+
+放射性通常与物质的原子结构有关：一个原子由一个原子核和一些环绕着核的电子$e^-$组成。电子通常占据不同层级（比如K,L,M层级)。电子核是由电中性的中子$n$和带正电的质子$p^+$组成。
+表\ref{tb1}给出了这些成分的基本性质。
+
+\begin{table}[h]
+    \centering
+    \caption{原子性质}
+    \label{tb1}
+    \setlength{\tabcolsep}{15mm}
+    \begin{tabular}{c|c|c}
+        \hline
+        \quad &质量(Kg)&电荷量\\
+        \hline
+        质子$p^n$&$1.67*10^{-27}$&$+1.602*10^{-19}$C\\
+        \hline
+        中子$n$&$1.67*10^{-27}$&电中性,$\pm 0$\\
+        \hline
+        电子$e^-$&$9.11*10^{-31}$&$-1.602*10^{-19}$C\\
+        \hline
+    \end{tabular}
+\end{table}
+
+原子的质子数是原子的序数$Z$。一个电中性，原子序数为$Z$的原子有$Z$个环绕电子。原子的质子数和中子数的和是原子的质量数$A$。
+
+某种元素通常表示成$_{Z}\mbox{元素符号}^A$。比如，氦元素可以表示为$_{2}He^4$。
+
+每一个元素有一系列独特的离散的能级。一个稳定的原子核处于最低的能级（基态）。位于更高的能级时，它处于激发态，不稳定。在降低至最小能级的过程中，原子核会释放能量。
+这种衰变过程所需的时间从几分之一秒到数百万年不等，具体取决于元素种类。衰变过程遵循等式：
+\begin{equation}\label{eq1}
+    N(t)=N_0 \cdot \exp(-C_d \cot t)=N_0 \cdot \exp(-0.693 \cdot \frac{t}{t_{1/2}})
+\end{equation}
+
+$N_0$表示开始计算时原子核数目，$N(t)$表示t时间后原子核数目，$C_d$表示该种元素衰减系数，$t_{1/2}$表示该种元素半衰期。
+
+在统计学中，原子核衰变过程可以用泊松分布来表示。对于泊松分布，标准差$\sigma$与观测到的核数$n$有关
+\begin{equation}\label{eq2}
+    \sigma = \sqrt{n}
+\end{equation}
+
+对于实际测量，这会导致不确定度由测量得到的核数控制；所以，这依赖于辐射的强度，检测的灵敏度和观测时间。因此，这限制了放射性测量工具记录的速度，必须快速记录。
+
+\subsection{天然放射性}
+
+有三种天然放射性粒子流：
+\begin{enumerate}
+    \item 阿尔法射线（带正电的粒子辐射）
+    \item 贝塔射线（带负电的粒子辐射）
+    \item 伽马射线 （高能电磁波，光子）
+\end{enumerate}
+
+阿尔法和贝塔射线的穿透深度都很小。所以在实际应用中，通常采用伽马射线。
+
+伽马射线的能量通常写成电压($eV$)形式，或者频率($Hz$)形式：
+\begin{equation}\label{eq3}
+    E=h \cdot f = 4.1357*10^{-15} \cdot f
+\end{equation}
+
+$h$是普朗克常数$h=4.1357*10^{-15}eVs=6.6261*10^{-34}Js$。
+
+\subsubsection{岩石中天然伽马射线的起源}
+
+元素通常有多种同位素形式。如果这些同位素不稳定，它们就会衰变到稳定形式，并且放出辐射。天然岩石中只有三种放射性衰减过程，产生可以测量的伽马射线：
+\begin{itemize}
+    \item 铀元素（半衰期$4.4*10^9$年）
+    \item 钍元素（半衰期$1.4*10^9$年）
+    \item 钾元素$K^40$（半衰期$1.3*10^9$年）
+\end{itemize}
+
+铀元素$U-238$($_{92}U^{238}$)和钍元素$Th-232$($_{90}Th^{232}$)经过一系列的衰变，最终分别得到稳定的铅元素$Pb-206$($_{82}Pb^{206}$)和$Pb-208$($_{82}Pb^{208}$)。衰变得过程导致辐射光谱中出现离散的能级。铀元素和钍元素的光谱中都有特征性的尖峰：铀元素为1.76MeV，钍元素为2.62MeV。
+
+$0.0119\%$钾元素是放射性同位素$_{19}K^{40}$。衰变过程释放能量为1.46MeV的伽马射线。衰变的最终产物是氩元素($_{18}Ar^{40}$)图\ref{fig1}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=14cm]{figures/fig1.jpg}
+    \caption{铀元素，钍元素，钾元素衰变释放的伽马射线中的能量。垂直线段的长度与辐射强度成比例\textit{Schlumberger(1989a,b)}}
+    \label{fig1}
+\end{figure}
+
+\subsubsection{矿物中的钾，铀，钍}
+
+钾元素广泛地以化学方式结合在许多矿物中；有三类主要的含钾矿物：
+\begin{enumerate}
+    \item 黏土矿物，钾元素通常或者存在于矿物结构中，或者被黏土颗粒吸收；一个实例是伊利石(\ce{(K,H3O)Al2(Si3Al)O10(H2O,OH)2})。不同黏土矿物中地钾元素含量也不同：伊利石钾含量高($3.5-8.3\%$)，相反高岭石钾含量比较低。
+    \item 成岩矿物，钾元素以化学方式存在于矿物结构中；经典的例子是钾长石(正长石\ce{KAlSi3O8}，微斜长石\ce{KAlSi3O8})和云母。
+    \item 盐结晶，钾元素通常保存为盐（钾盐\ce{KCl}，光卤石\ce{KCl}\ce{MgCl2(H2O)6}）。
+\end{enumerate}
+
+钾元素被看作是“起源于侵蚀的元素，它常常被剥蚀和长距离搬运”(\textit{Baker Atlas, 1985})
+
+钍元素通常与酸性或中性岩石关联。它非常的稳定并且不会被溶解。由于风化和搬运作用，钍元素与碎屑沉积物一起沉积，从不沉积在纯化学物质沉积物中（碳酸盐、文石）。因此，在碳酸盐岩储层中，钍元素是非常重要的黏土指示物。由于被粘土矿物吸附，它和其他富集的重矿物一起沉积在海洋中。所以，钍通常被认为是一种海洋元素(\textit{Baker Atlas, 1985})
+
+铀元素也通常与酸性或中性岩石关联——通常浓度为4.65ppm。由于风化和搬运，不像钾元素和钍元素，铀元素可以被溶解，会被搬运到河流或者海洋中。铀盐不稳定，会进入沉积物中。铀元素进入沉积物中有三种途径(\textit{Serra 1984,2004})
+\begin{enumerate}
+    \item 在酸性还原环境下化学沉降(pH 2.5-4.0)
+    \item 被植物或动物吸收
+    \item 与磷反应
+\end{enumerate}
+
+酸还原条件尤其存在于停滞、缺氧的水中。沉降率相对较低，通常会产生黑色页岩。(\textit{Rider, 1986})
+
+受搬运、沉积过程以及化学环境控制，铀存在于碎屑和化学沉积物（页岩、砂岩、砾岩、碳酸盐岩），也常见于凝灰岩和磷酸盐中。在还原作用下形成的富含有机物的碳酸盐岩中，铀的含量通常非常高。这些放射性的碳酸盐岩是丰富的储层。铀也被粘土矿物吸附；页岩中铀含量过高表明页岩为烃源岩。(\textit{Baker Atlas, 1985})
+
+\textit{Rider, 1996}指出“铀元素作为一种独立的成分，它没有像钾一样结合于岩石的化学结构，反而松散的与第二成分结合。因此，它在沉积物中的分布非常不均匀。
+
+三种放射性成分的主要发生情况如下(\textit{Schilumberger, 1982})：
+\begin{enumerate}
+    \item 钾：云母，钾长石，黏土，放射性盐岩
+    \item 钍：页岩，重矿物
+    \item 铀：磷矿，有机质
+\end{enumerate}
+
+表\ref{tb2}给出矿物的钾、铀和钍含量。一些重要的造岩矿物如石英，方解石，白云石和硬石膏没有列出。因为作为矿物，它们与钾、铀和钍无关。
+\begin{center}
+	\begin{longtable}{lllllp{3cm}p{2cm}p{2cm}p{2cm}p{1.5cm}}
+    \caption{一些矿物的钾、铀和钍含量；[]中的值表明平均值}\\
+    \label{tb2}\\
+        \hline
+        矿物&钾(\%)&铀(ppm)&钍(ppm)&来源\\
+        \multirow{2}*{斜长石}&0.54&0.02-5.0&0.01-3.0&BA\\
+        ~&0.54&0.2-5.0&0.5-3.0&Sch\\
+        \hline
+        \multirow{2}*{正长石}&11.8-14.0&0.2-3.0&0.01-7.0&BA\\
+        ~&$11.8^a$(14理想状态)&0.2-3.0&3-7&Sch\\
+        \hline
+        \multirow{2}*{微斜长石}&10.9&0.2-3.0&0.01-7.0&BA\\
+        ~&$10.9^a$(16理想状态)&\quad &\quad &Sch\\
+        \hline
+        \multirow{3}*{黑云母}&6.2-10&1-40&0.5-50&Hu\\
+        ~&6.2-10.1[8.5]&1-40&0.5-50&Sch\\
+        ~&6.7-8.3&\quad &$<0.01$&BA\\
+        \hline
+        \multirow{3}*{白云母}&7.8-9.8&\multirow{3}*{2-8}&0-25&Hu\\
+        ~&7.8-9.8&~&$<0.01$&BA\\
+        ~&7.9(9.8理想状态)&~&10-$25^b$&Sch\\
+        \hline
+        \multirow{3}*{伊利石}&3.5-8.3&1-5&10-25&Hu\\
+        ~&4.5&1.5&$<2.0$&BA\\
+        ~&3.5-8.3[6.1]&1.5 &10-25&Sch\\
+        \hline
+        \multirow{3}*{高岭石}&0-0.6&1-12&6-47&Hu\\
+        ~&0.42&1.5-3&6-19&BA\\
+        ~&0-$0.6^c$[0.35]&1.5-9 &6-42&Sch\\
+        \hline
+        \multirow{2}*{亚氯酸盐}&0-0.3&\quad &3-5&Hu\\
+        ~&0-0.35[0.1]&\quad &\quad &Sch\\
+        \hline
+        \multirow{2}*{蒙皂石}&0-1.5&1-21&6-44&Hu\\
+        ~&0-0.6[0.22]&\quad &10-24&Ri\\
+        \hline
+        \multirow{2}*{蒙脱石}&0.16&2-5&14-24&BA\\
+        ~&0-$4.9^d$[1.6]&2-5&10-24&Sch\\
+        \hline
+        \multirow{2}*{铝土矿}&\quad &3-30[8.0]&8-132[42]&BA\\
+        ~&\quad &3-30&10-132&Sch\\
+        \hline
+        \multirow{2}*{膨润土}&$<0.5$&1-21[5.0]&6-50&BA\\
+        ~&\quad &1-36&4-55&Sch\\
+        \hline
+        \multirow{3}*{海绿石}&5.08-5.30&\quad &\quad &BA\\
+        ~&3.2-5.8[4.5]&\quad &$<10$&Sch\\
+        ~&3.2-5.8[4.5]&\quad &2-8&Ri\\
+        \hline
+        磷酸盐&\quad&1000-350&1-5&BA\\
+        锆石&\quad &300-3000&100-2500&BA\\
+        榍石&\quad &100-700&100-600&BA\\
+        绿帘石&\quad &20-50 &50-500&BA\\
+        磷灰石&\quad &5-150&20-150&BA\\
+        独居石&\quad &500-3000&$(2.5-20)*10^4$&BA\\
+        钾盐&52.4&\quad &\quad&Sch\\
+        菱镁矿&18.8&\quad &\quad&Sch\\
+        凯因石&15.7&\quad &\quad&Sch\\
+        光卤石&14.1&\quad &\quad&Sch\\
+        \hline
+\end{longtable}
+\parbox{15cm}{表中：BA指(\textit{Baker Atlas, 1985})，Ri指(\textit{Rider, 1986})，Sch指(\textit{Schlumberger, 1983})，Hu指(\textit{Hurst, 1990})\\
+\textit{a:指初始搬运
+b:没有钍的纯白云母。然而，在沉积岩中，白云母的沉积（或云母）通常伴随着更细的重矿物沉积，重矿物承载铀和钍。
+c:由于长石降解不完全，高岭石有时含有更多的 K。 自生高岭石不含 K 和 Th
+d:一些蒙脱石可能对应于不完全降解的白云母或不完整的通过成岩作用转化为伊利石}}
+\end{center}
+
+\begin{table}[H]
+    \centering
+    \caption{铀、钍和钾在地壳中的平均含量值。来自\textbf{Heier and Rogers(1963)}[H]和\textbf{Prutkina and Saskin(1975)}[P]}
+    \label{tb3}
+    \begin{tabular}{c|c|c|c|c}
+        地壳类别&钾(\%)&铀(ppm)&钍(ppm)&来源\\
+        \hline
+        地壳&2.5&2.5&13&P\\
+        地壳&2.1&2.1&7.8&H\\
+        大洋地壳&0.87&0.64&2.8&H\\
+        大陆地壳&2.6&2.8&10&H\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{岩石中的钾、铀和钍含量}
+
+岩石的天然放射性是由于三种放射性元素：铀、钍和钾的分布。铀、钍和钾在不同地壳岩石中的浓度变化很大，这是因为不同岩石的矿物组成，成因和环境不同。地壳的平均含量在表\ref{tb3}中展示。一些挑选过的值在表\ref{tb4}中。更多数据在(\textit{Hacck 1982 and Clark 1966})中可以被找到。
+
+表\ref{tb4}展示了不同岩石的铀、钍和钾含量。这与岩石对应的造岩矿物中元素含量对应（表\ref{tb2}）。
+
+\begin{center}
+	\begin{longtable}{lllllp{3cm}p{2cm}p{2cm}p{2cm}p{1.5cm}}
+		\caption{一些岩石中的钾，铀和钍的含量}\\
+		\label{tb4}\\
+		\hline\noalign{\smallskip}
+		岩石种类 & 钾(\%) & 铀(ppm) & 钍(ppm) & 来源\\
+		\hline
+        \multicolumn{5}{l}{侵入岩}\\
+        \hline
+		花岗岩 & 2.75-4.26 & 3.6-4.7 & 19-20 & BA \\
+        花岗质岩石（平均） & 4.11 & 4.35 & 15.2 & Sch \\
+        花岗质岩石 & 2.3-4.0 & 2.1-7.0 & 8.3-40 & Do \\
+        黑云母花岗岩 & 3.4 & 4.0 & 15 & D \\
+        \multirow{2}*{正长岩} & 2.7-4.9 & 2500 & 1300 & BA \\
+        ~ & 2.63 & 2500 & 1338 & Sch \\
+        辉长岩 & 0.46-0.58 & 0.84-0.90 & 2.70-2.85 & Sch \\
+        \multirow{2}*{花岗闪长岩} & 2-2.5 & 2.6 & 9.3-11 & BA, Sch \\
+        ~ & 2.3 & 2.1 & 8.3 & Do \\
+        \multirow{2}*{闪长岩} & 1.1 & 2.0 & 8.5 & BA, Sch \\
+        ~ & 1.8 & 1.8 & 6.0 & Do \\
+        纯橄榄岩 & $<0.02$ & $<0.01$ & $<0.01$ & BA, ch \\
+        纯橄榄岩 辉石岩 & 0.15 & 0.03 & 0.08 & D \\
+        橄榄岩 & 0.2 & 0.01 & 0.05 & BA, Sch \\
+        \hline
+        \multicolumn{5}{l}{喷出岩}\\
+        \hline
+        \multirow{2}*{流纹岩} & 4.2 & 5.0 & \quad & BA \\
+        ~ & 2-4 & 2.5-5 & 6-15 & Sch \\
+        粗面岩 & 5.7 & 2-7 & 9-25 & Sch \\
+        碱性玄武岩 & 0.61 & 0.99 & 4.6 & BA, Sch \\
+        高地玄武岩 & 0.61 & 0.53 & 1.96 & Sch  \\
+        \multirow{2}*{安山岩} & 1.7 & 0.8 & 1.9 & Sch \\
+        ~ & 1.7 & 1.2 & 4.0 & D \\
+        英安岩 & 2.3 & 2.5 & 10.0 & D  \\
+        英安流纹岩 & 3.7 & 4.7 & 19 & Do \\
+        \hline
+        \multicolumn{5}{l}{变质岩}\\
+        \hline
+        片麻岩-瑞士阿尔卑斯山 & 0.32-4.7[3.11] & 0.9-24[4.95] & 1.2-25.7[13.1] & RyCe \\
+        片麻岩(KTB,德国) & $2.28\pm 0.17$ & $2.6\pm 1.2$ & $8.2\pm 2.0$ & B \\
+        榴辉岩 & 0.8 & 0.2 & 0.4 & D \\
+        角闪石-瑞士阿尔卑斯山 & 0.11-2.22[1.23] & 0-7.8[1.65] & 0.01-13.7[3.0] & RyCe \\
+        角闪石 & 0.6 & 0.7 & 1.8 & Do \\
+        准基性岩(KTB,德国) & $0.6\pm 0.5$ & $2.5\pm 1.6$ & $2.5\pm 1.6$ & B \\
+        片岩-瑞士阿尔卑斯山 & 0.39-4.44[2.23] & 0.4-3.7[2.14] & 1.6-17.2[9.73] & RyCe \\
+        \multirow{2}*{石英岩} & 0.6 & 0.8 & 3.1 & D \\
+        ~ & 0.9 & 0.6 & 1.8 & R \\
+        大理岩 & 0.2 & 1.1 & 2.2 & D \\
+        \hline
+        \multicolumn{5}{l}{沉积岩}\\
+        \hline
+        碳酸盐岩 & 0.0-2.0[0.3] & 2.8-2.5[2.2] & 0.1-7.0[1.7] & BA \\
+        \multirow{2}*{石灰岩} & 0.3 & 1.6 & 1.8 & D \\
+        ~ & 0.3 & 2.0 & 1.5 & R \\
+        \multirow{2}*{白云岩} & 0.4 & 3.7 & 2.8 & D \\
+        ~ & 0.7 & 1.0 & 0.8 & R \\
+        泥灰岩 & 0.8 & 2.8 & 2.5 & D \\
+        硬石膏 & 0.4 & 0.1 & 0.3 & R \\
+        盐岩 & 0.1 & 0.02 & 0.3 & R \\
+        砂岩 & 0.7-3.8[1.1] & 0.2-0.6[0.5] & 0.7-2.0[1.7] & BA \\
+        硬砂岩 & 1.3 & 2.0 & 7.0 & R \\
+        页岩(200个样品) & 2.0 & 6.0 & 12.0 & BA \\
+        普通页岩 & 1.6-4.2[2.7] & 2-13 & 3-47 & BA \\
+        页岩 & 2.7 & 3.7 & 12 & R \\
+        含油页岩(科罗拉多) & $<4.0$ & 最高500 & 1-30 & BA \\
+        黑页岩 & 2.6 & 20.2 & 10.9 & R \\
+        标准成分北美页岩 & 3.2 & 2.66 & 12.3 & KGS \\
+        黏土(北大西洋，加勒比) & 2.5 & 2.1 & 11 & KaHa \\
+        黏土(更新世) & 1.9-2.5 & 1.1-3.8 & 5.7-10.2 & \quad \\
+        黏土,泥(第三纪) & 1.3-3.1 & 1.2-4.3 & 1.4-9.3 & \quad \\ 
+	\end{longtable}
+
+    \parbox{15cm}{BA,\textit{Baker Atlas(1985)}; Sch,\textit{Schlumberger (1982)}; Do, \textit{Dortman (1976)}; RyCe, \textit{Rybach and Cermak (1982)}; B, \textit{Buker et al. (1989)}; KaHa, \textit{Kappelmeyer and Haenel (1974)}; D, \textit{Dobrynin et al. (2004)}; R, \textit{Rybach (1976)}; KGS, \textit{Kanas Geological Survey (2010)}. []中的值表示平均}
+\end{center}
+
+\begin{figure}[htb]
+    \centering
+    \caption{岩石天然放射性大体趋势}
+    \label{fig2}
+    \includegraphics[width=10cm]{figures/fig2.jpg}
+\end{figure}
+
+\begin{table}
+    \centering
+    \caption{火成岩中铀、钍和钾平均含量。来自(\textit{Dortman (1976), Saporosec (1978), Fertl (1979), Kobranova (1989)})}
+    \label{tb5}
+    \begin{tabular}{l|l|l|l|l}
+        \hline
+        岩石种类 & 铀(ppm) & 钍(ppm) & 钾(\%) & 钍/铀 \\
+        \hline
+        花岗岩 & 4-7 & 15-40 & 3.4-40 & 3.5-5.6 \\
+        花岗闪长岩 & 2.1 & 8.3 & 2.3 & 4.0 \\
+        闪长岩 & 1.8 & 6.0 & 1.8 & 3.3 \\
+        辉长岩，辉绿岩 & 0.6 & 1.8 & 0.7 & 3.0 \\
+        橄榄岩 & 0.03 & 0.08 & 0.15 & 2.7 \\
+        玄武岩 & 0.7 & 2.3 & 1.0 & 3.2 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+图\ref{fig2}表示了由于钾、铀和钍的分布导致的岩石中天然放射性的大体趋势。
+\begin{itemize}
+    \item 火成岩的放射性从基性岩到酸性岩递增。
+    \item 沉积岩的放射性从砂岩到页岩递增，因为黏土矿物的成分增加。
+\end{itemize}
+
+\paragraph{5.2.3.1 火成岩}
+
+通常情况下，这三种元素在酸性岩石中比基性岩更多。有一个例外是碱性长石类岩石。岩浆岩中的高放射性主要与含铀和钍的副矿物的存在有关(\textit{Kobranova, 1989})。在每种岩石类型中，元素含量的分布所产生的放射性是有代表性的。(表\ref{tb5})
+
+\begin{table}[htb]
+    \centering
+    \caption{一些火成岩的铀、钍和钾含量，源自USGS；\textit{Adams and Gasparini 1970}}
+    \label{tb6}
+    \begin{tabular}{l|l|l|l}
+        \hline
+        岩石种类 & 铀(ppm) & 钍(ppm) & 钾(\%)\\
+        \hline
+        \multicolumn{4}{l}{酸性侵入}\\
+        \hline
+        \multicolumn{4}{l}{花岗岩}\\
+        罗德岛 & 1.32-3.4(1.99) & 21.5-26.6(25.2) & 3.92-4.8(4.51) \\
+        罗德岛 & 1.3-4.7(4) & 6.5-80(52) & 5.06-7.4(5.48) \\
+        前寒武纪 & 3.2-4.6 & 14-27 & 2-6 \\
+        平均 & 4.35 & 15.2 & 4.11 \\
+        正长岩 & 2500 & 1338 & 2.63 \\
+        \hline
+        \multicolumn{4}{l}{基性侵入}\\
+        \hline
+        辉长岩 & 0.84-0.9 & 2.7-3.85 & 0.46-0.58 \\
+        花岗闪长岩 & 2.6 & 9.3-11 & 2-2.5 \\
+        闪长岩 & 2 & 8.5 & 1.1 \\
+        纯橄岩 & 0.01 & 0.01 & 0.02 \\
+        橄榄岩 & 0.01 & 0.05 & 0.2 \\
+        \hline
+        \multicolumn{4}{l}{酸性喷出}\\
+        \hline
+        流纹岩 & 2.5-5 & 6-15 & 2-4 \\
+        粗面岩 & 2-7 & 9-25 & 5.7 \\
+        \hline
+        \multicolumn{4}{l}{基性喷出}\\
+        \hline
+        碱性玄武岩 & 0.99 & 4.6 & 0.61 \\
+        高地玄武岩(俄勒冈) & 0.53 & 1.96 & 0.61 \\
+        碱性橄榄石 & 1.4 & 3.9 & 1.4 \\
+        玄武岩 & 1.2-2.2(1.73) & 5.5-15(6.81) & 1.4-3.23(1.68) \\
+    \end{tabular}
+\end{table}
+
+为了比较，表\ref{tb6}表明了USGS标准中的放射性值和范围。
+
+\paragraph{5.2.3.2 变质岩}
+
+\begin{figure}[htb]
+    \centering
+    \caption{0-3900米的间隔的钻孔岩心伽马射线计数率频率分布；n，测量数； 1、变基岩； 2、片麻岩。(\textit{Bucker et al. 1989})}
+    \label{fig3}
+    \includegraphics[width=15cm]{figures/fig3.jpg}
+
+\end{figure}
+
+变质岩中铀、钍和钾的含量是由离析物（火成岩或沉积岩）的原始含量决定，并且可能已被变质过程改变。元素被吸附，并根据变质程度重新分配(\textit{Rybach and Cermak, 1982})。图\ref{fig3}显示取自KTB的样本测量值以及两个主要岩性单元的分布。
+
+放射性元素的含量经常随着变质作用的增加而减少。\textit{Rybach and Cermak(1982)} 发现，“在麻粒岩相的岩石中，由渐进的变质作用引起的铀和钍的减少最为明显。……由于脱水反应（中地壳水平）或由于地壳底部附近的部分熔化（混合岩），引起铀和钍有向上的地壳迁移趋势……钾似乎或多或少不受这些过程的影响”。变质岩的平均 Th/U 比值可能会偏离典型的侵入岩的值（表\ref{tb7}）。 “这是由于钾、钍和铀在变质过程中的不等损失，其中铀的迁移性有很大影响”，根据\textit{Haack (1982)}。
+
+\begin{table}[htb]
+    \centering
+    \caption{变质岩中铀、钍和钾含量以及Th/U的平均值和范围。 D, \textit{Dortman (1976)}; B, \textit{Bucker (1989)}; R, \textit{Rybach and Cermak (1982)}; P, \textit{Puzankov et al.(1977) and Rybach (1976)}}
+    \label{tb7}
+    \begin{tabular}{l|l|l|l|l|l}
+        \hline
+        岩石种类 & 铀(ppm) & 钍(ppm) & 钾(\%) & 钍/铀 & 来源 \\
+        \hline
+        \multirow{2}*{石英岩-瑞士阿尔卑斯山} & 0.4 & 2.2 & 1.06 & 5.5 & R \\
+        ~ & 0.2-0.6 & 2.1-2.3 & 0.95-1.16 & \quad & \quad \\
+        片麻岩(KTB,德国) & $2.8\pm 1.2$ & $8.2\pm 2.0$ & $2.28\pm 0.17$ & 3.2 & B \\
+        \multirow{2}*{片麻岩-瑞士阿尔卑斯山} & 4.95 & 13.1 & 3.11 & 2.64 & R \\
+        ~ & 0.9-24 & 1.2-25.7 & 0.32-4.71 & 0.69-8.2 & \quad \\
+        榴辉岩 & 0.2 & 0.4 & 0.8 & 2.0 & D \\
+        角闪石 & 0.7 & 1.8 & 0.6 & 2.6 & D \\
+        \multirow{2}*{角闪石-瑞士阿尔卑斯山} & 1.65 & 3.0 & 1.23 & 1.82 & R \\
+        ~ & 0-7.8 & 0.01-13.7 & 0.11-2.22 & 0.01-3.5 & \quad \\
+        准基性岩(KTB,德国) & $0.6\pm 0.5$ & $2.5\pm 1.6$ & $1.05\pm 0.16$ & 4.2 & B \\
+        斜长屑混合岩 & 0.8 & 2.3 & 1.7 & 2.9 & D \\
+        硅线石-堇青石片麻岩 & 1.3 & 4.2 & 2.6 & 3.2 & D \\
+        \multirow{2}*{片岩-瑞士阿尔卑斯山} & 2.14 & 9.73 & 2.23 & 4.6 & R \\
+        ~ & 0.4-3.7 & 1.6-17.2 & 0.39-4.44 & 0.25-2.28 & \quad \\
+        板岩-勘察加半岛 & 2.0 & 6.4 & 1.83 & 3.2 & P\\
+    \end{tabular}
+\end{table}
+
+\paragraph{5.2.3.3 沉积岩}
+
+“在沉积岩中，相对平均丰度的可预测性低于在火成岩中。平均而言，钾的有效浓度较低，钍和铀的含量大致相同。作为一类沉积岩，碳酸盐岩的天然放射性最低……一般来说，页岩比其他沉积岩具有更强的天然放射性；因此，伽马射线探仪可用于区分页岩和其他沉积岩”。\textit{Hearst and Nelson, 1985}
+
+黏土成分与沉积岩的放射性强度的相关性对识别储层非常重要：
+
+\begin{itemize}
+    \item 分辨黏土层和砂层
+    \item 确定黏土成分
+    \item 识别黏土类型
+\end{itemize}
+
+如果可以进行伽马射线光谱测量，推荐使用钍和钾进行页岩成分推导。\textit{Fertl(1983)} 指出伽马射线光谱记录的钍曲线允许定量测量粘土体积，尽管存在铀和钾的影响。（可能是由于云母，尤其是白云母，例如在北海的侏罗纪砂岩）。
+
+一些关于砂岩的天然放射性讨论实例在\textit{Schulumberger (1982)}：
+
+\hspace{2em}
+长石砂岩或弧形砂岩有含钾的长石砂：因此它们显示出非常低的Th/K比率$(<10^{-4}$，同时也有比纯石英($2.65*10^3 kg/m^3$)低的基质密度，因为长石的低密度($2.52-2.53*10^3km/m^3$)。
+
+\hspace{2em}
+云母砂岩：云母含钾；因此，钾云母砂岩的钾含量高于纯砂岩。由于含含钍矿物，钍含量也较高。因此，Th/K比率接近于$2.5*10^{-4}$。云母砂岩的密度高于纯石英的密度，因为云母密度较高($2.8-3.1*10^3kg/m^3$)。
+
+\hspace{2em}
+砂岩中的重矿物：重矿物如锆石、花岗岩、独居石等是含钍和铀的。因此，在这些砂岩中，只有钍和铀含量高；钾水平非常低。因此，这种类型的砂岩显示出非常高的Th/K比率。
+
+
+
+\end{document}
