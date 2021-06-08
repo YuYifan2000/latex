@@ -1,0 +1,8 @@
+\contentsline {subsection}{\numberline {5.1}\large 基本概念}{1}{}%
+\contentsline {subsection}{\numberline {5.2}天然放射性}{2}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}岩石中天然伽马射线的起源}{2}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}矿物中的钾，铀，钍}{2}{}%
+\contentsline {subsubsection}{\numberline {5.2.3}岩石中的钾、铀和钍含量}{5}{}%
+\contentsline {paragraph}{5.2.3.1 火成岩}{7}{}%
+\contentsline {paragraph}{5.2.3.2 变质岩}{7}{}%
+\contentsline {paragraph}{5.2.3.3 沉积岩}{8}{}%
