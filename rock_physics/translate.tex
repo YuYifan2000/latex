@@ -378,7 +378,7 @@ d:一些蒙脱石可能对应于不完全降解的白云母或不完整的通过
 
 通常情况下，这三种元素在酸性岩石中比基性岩更多。有一个例外是碱性长石类岩石。岩浆岩中的高放射性主要与含铀和钍的副矿物的存在有关(\textit{Kobranova, 1989})。在每种岩石类型中，元素含量的分布所产生的放射性是有代表性的。(表\ref{tb5})
 
-\begin{table}[htb]
+\begin{table}[!h]
     \centering
     \caption{一些火成岩的铀、钍和钾含量，源自USGS；\textit{Adams and Gasparini 1970}}
     \label{tb6}
@@ -421,7 +421,7 @@ d:一些蒙脱石可能对应于不完全降解的白云母或不完整的通过
 
 \paragraph{5.2.3.2 变质岩}
 
-\begin{figure}[htb]
+\begin{figure}[!h]
     \centering
     \caption{0-3900米的间隔的钻孔岩心伽马射线计数率频率分布；n，测量数； 1、变基岩； 2、片麻岩。(\textit{Bucker et al. 1989})}
     \label{fig3}
@@ -433,7 +433,7 @@ d:一些蒙脱石可能对应于不完全降解的白云母或不完整的通过
 
 放射性元素的含量经常随着变质作用的增加而减少。\textit{Rybach and Cermak(1982)} 发现，“在麻粒岩相的岩石中，由渐进的变质作用引起的铀和钍的减少最为明显。……由于脱水反应（中地壳水平）或由于地壳底部附近的部分熔化（混合岩），引起铀和钍有向上的地壳迁移趋势……钾似乎或多或少不受这些过程的影响”。变质岩的平均 Th/U 比值可能会偏离典型的侵入岩的值（表\ref{tb7}）。 “这是由于钾、钍和铀在变质过程中的不等损失，其中铀的迁移性有很大影响”，根据\textit{Haack (1982)}。
 
-\begin{table}[htb]
+\begin{table}[!h]
     \centering
     \caption{变质岩中铀、钍和钾含量以及Th/U的平均值和范围。 D, \textit{Dortman (1976)}; B, \textit{Bucker (1989)}; R, \textit{Rybach and Cermak (1982)}; P, \textit{Puzankov et al.(1977) and Rybach (1976)}}
     \label{tb7}
@@ -484,6 +484,156 @@ d:一些蒙脱石可能对应于不完全降解的白云母或不完整的通过
 \hspace{2em}
 砂岩中的重矿物：重矿物如锆石、花岗岩、独居石等是含钍和铀的。因此，在这些砂岩中，只有钍和铀含量高；钾水平非常低。因此，这种类型的砂岩显示出非常高的Th/K比率。
 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig4.jpg}
+    \caption{三种典型的伽马射线光谱测量；来自大洋钻探项目181和189}
+    \label{fig4}
+\end{figure}
+
+参考粘土矿物和页岩中存在的钍、铀、钾的发生机理，\textit{Rider (1996)}说：“总结：指示页岩的存在，大多数情况下可以使用钍，部分情况下可以使用钾，但根本不应该使用铀。这显然对伽马射线记录的使用有影响：它不一定是合适的页岩探测方法”。
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=10cm]{figures/fig5.jpg}
+    \caption{碳酸盐岩中的伽马射线}
+    \label{fig5}
+\end{figure}
+
+图\ref{fig4}显示了三种典型的伽马射线光谱测量。
+
+在碳酸盐岩系列中，总的伽马强度是较差的粘土指标，因为测量值与粘土含量无关，而是与铀的存在有关。典型案例是图\ref{fig5}：
+\begin{itemize}
+    \item 无放射性碳酸盐（化学来源），具有钍和钾含量接近于零。如果铀含量也为零，则该碳酸盐在氧化环境中沉淀。
+    \item 如果铀含量变化，则碳酸盐可能是沉积在还原环境中，或对应于碳酸盐中的柱石（其中含有杂质，如铀、有机物甚至粘土矿物），或含磷酸盐。
+    \item 如果钍和钾与铀一起存在，这表明碳酸盐中存在粘土（粘土碳酸盐到泥灰岩）。
+    \item 如果钾存在或不存在铀，它可以对应于藻类来源的碳酸盐岩或海绿石碳酸盐岩。
+\end{itemize}
+
+\subsection{光谱和整体测量-API单位}
+
+在地球物理现场实际测量中，测量伽马辐射的两种技术是：光谱测量和整体测量。
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig6.jpg}
+    \caption{页岩区中钍、钾、铀成分的伽马射线光谱}
+    \label{fig6}
+\end{figure}
+
+图\ref{fig6}展示了一个全光谱测量页岩区的例子。
+
+对于大部分应用场景，光谱测量技术是通过数据简化实现的：整个光谱分为三个窗口：
+
+\begin{enumerate}
+    \item 第一个窗口 1.3-1.6MeV 含有K能量峰(1.46MeV)
+    \item 第二个窗口 1.6-2.4MeV 含有U能量峰(1.76MeV)
+    \item 第三个窗口 2.4-2.8MeV 含有Th能量峰(2.61MeV)
+\end{enumerate}
+
+处理过程，所谓的“光谱分离”(比如\textit{Ellis, 1987; Hearst and Nelson, 1985})，解决了三种元素混合的矩阵算法问题。
+
+在许多情况下，会应用“整体测量技术”：在一个固定的能量水平，测量所有能量。因此，整体测量是三个元素贡献的总和。
+
+\begin{equation}
+    \label{eq4}\\
+    I_{API}=k\cdot (a\cdot K+U+b\cdot Th)
+\end{equation}
+
+U和Th单位是ppm，K是\%。k是仪器的常数，a是与1\%K产生相同辐射的U的浓度值(ppm)，b是与1ppmTh产生相同辐射的U的浓度值(ppm)(\textit{Hearst and Nelson, 1985})。
+
+伽马辐射测量的单位由美国石油协会(API)确立。该标准允许在不同的伽马射线计数设备之间进行比较。API单位来自美国休斯顿大学的试验坑。美国石油协会(API)单位标准设施由混凝土建造，掺有镭以提供铀衰变系列，独居石矿石作为钍的来源和云母作为钾的来源。该设施有4.07\%K、24.2ppm Th 和 13.1 ppm U（\textit{Ellis,1987}）。该标准设施测量值为200个API，等于页岩平均值的两倍。表\ref{tb8} 给出了一些造岩矿物的平均 API 值。
+
+\begin{table}[!h]
+    \centering
+    \caption{伽马辐射平均API值}
+    \label{tb8}
+    \begin{tabular}{l|lp{15cm}p{6cm}}
+        \hline
+        物质 & API \\
+        \hline
+        石英，方解石，白云石 & 0 \\
+        斜长石（钠长石，钙长石） & 0 \\
+        碱性长石 （正长石，微斜长石） & $\approx 220$ \\
+        白云母 & $\approx 270$ \\
+        黑云母 & $\approx 275 $ \\
+        高岭石 & $80-130$ \\
+        伊利石 & $250-300$ \\
+        亚氯酸盐 & $180-250$ \\
+        蒙脱石 & 150-200 \\
+        钾盐 & 500+ \\
+        光卤石 & $\approx 220$ \\
+    \end{tabular}
+\end{table}
+
+\subsubsection{应用}
+
+\paragraph{5.2.5.1 岩石剖面}
+
+在火成岩中，总的趋势是辐射强度从超基性到酸性岩石逐渐增加。 这归因于较高的铀、钍含量和云母、碱长石中的钾含量。岩石成分的改变可以改变放射性。
+
+在沉积岩中，无放射性的碳酸盐和砂岩通常显示最低值。放射性随着页岩含量的增加而增加。最高值来自黑色海相页岩。但有一些重要的具体的高辐射情况：
+\begin{itemize}
+    \item 长石、云母、海绿石（绿砂）含量高的砂岩。
+    \item 还原环境中的碳酸盐岩、柱石、磷酸盐。
+\end{itemize}
+
+伽马辐射记录允许进行（定性）岩性分析。无放射性（砂岩、碳酸盐岩）和页岩部分可以被分开。在地质应用中，伽马辐射记录是一个工具可以面向：
+\begin{itemize}
+    \item 通过典型的河道曲线形状进行沉积学研究，上部粗糙、上部分选好等形态
+    \item 沉积区井间对比及趋势推导
+\end{itemize}
+
+\paragraph{5.2.5.2 页岩成分估计}
+
+\textit{利用天然伽马辐射光谱数据是最好的确定黏土体积的方法... \\ \rightline{Fertl(1983)}}
+
+页岩含量估计值可以从基于伽马测量的页岩含量与放射性同位素含量之间的相关性得到。假设只有页岩或粘土产生辐射；不存在其他“放射性矿物质”。
+
+对于这种应用，在许多情况下使用整体测量。为了消除铀含量变化的影响，建议测量钾和钍的光谱能量贡献。
+
+分析包含两步：
+
+第一步：
+
+计算伽马辐射系数$I_{GR}$：这是这是实际的伽马读数通过无放射性岩石的值（最小伽马读数）和页岩（最大伽马读数）归一化：
+
+\begin{equation}
+    \label{eq5}\\
+    I_{GR}=\frac{GR-GR_{cn}}{GR_{sh}-GR_{cn}}
+\end{equation}
+
+$GR_{cn}$是没有页岩的记录，$GR_{sh}$是页岩区的记录，$GR$是观测区的记录。
+
+这个归一化对于无放射性岩石$I_{GR}=0$，对于页岩(100\%页岩)$I_{GR}=1$。
+
+第二步：
+
+将伽马辐射系数转换为页岩含量：对于这一转换，推荐使用经验公式。一下是经验公式，图\ref{fig4}给了一个例子。线性相关在所有情况下给出最高的页岩含量图\ref{fig7}。
+
+\begin{align}
+    V_{sh}=I_{GR}\quad Linear\quad relationship(upper\quad limit)\label{eq6}\\
+    V_{sh} = 0.083\cdot (2^{3.7\cdot I_{GR}}-1) \quad Tertiary\quad clastics\label{eq7}\\
+    V_{sh} = 0.33\cdot (2^{2.0\cdot I_{GR}}-1)\quad Mesozoic \quad and \quad older \quad rocks \label{eq8}
+\end{align}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig7.jpg}
+    \caption{伽马辐射系数$I_{GR}$和页岩含量$V_{sh}$的关系。作为例子$I_{GR}=0.35$(打点的线)，对于线性关系有$V_{sh}=0.35$。$V_{sh}=0.21$对于第三纪碎屑，$V_{sh}=0.12$对于中生代或更老的碎屑。}
+    \label{fig7}
+\end{figure}
+
+\paragraph{5.2.5.3 黏土矿物种类}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig8.jpg}
+    \caption{K-Th图从光谱记录估计黏土矿物(\textit{Mohammadlou et al., 2010})。上图：Th-K图，下图：在两个区域中识别出的黏土种类的光谱观测数据的Th-K图}
+    \label{fig8}
+\end{figure}
+
+钍和钾是“重要的矿物质”放射性成分。粘土矿物（以及云母和长石）的特征在于不同比例的钍与钾。图\ref{fig8}中的两种元素或不同位置。这可用于估计主要粘土地层中的矿物，也可用于检测云母或长石。
 
 
 \end{document}
