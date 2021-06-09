@@ -1,0 +1,216 @@
+% !Mode:: "TeX:UTF-8"
+
+\documentclass[a4paper,11pt,onecolumn,twoside]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{booktabs}
+\usepackage[labelfont=bf]{caption}
+\usepackage{indentfirst}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{subfigure}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{float}
+% Please change the following fonts if they are not available.
+\setmainfont{Times New Roman}
+\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
+
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{-0.9cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{17.00cm}
+\setlength{\textheight}{24.50cm}
+
+\renewcommand{\baselinestretch}{1.1}
+\parindent 22pt
+
+\title{\textbf{熵、配分定理与全球地震频率分析}}
+\author{
+余一凡
+\\[2pt]
+{\small \textit{南京大学 地球科学与工程学院2018级，南京 210046}}\\[6pt]
+}
+\date{}
+
+\fancypagestyle{firststyle}
+{
+   \fancyhf{}
+   \fancyhead[L]{余一凡 181830229}
+   \fancyhead[R]{\thepage}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{余一凡 181830229}
+
+\setlist{nolistsep}
+\captionsetup{font=small}
+\renewcommand{\refname}{参考文献}
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+\begin{document}
+\maketitle
+\thispagestyle{firststyle}
+
+\vspace{-1cm}
+\begin{center}
+\parbox{\textwidth}{
+\textbf{摘要} \quad {地震学研究通常利用地震波的弹性波性质，地震统计自上世纪末被提出鲜有人研究。虽然每年发生的地震总数远小于阿伏伽德罗常数，
+本文将统计物理学方法应用于地震统计。本文统计了CMT目录记录的1976年-2015年震级$5.4M_w$以上地震数目，根据震级计算释放的能量并根据统计物理学原理计算平均能量和熵。
+发现熵与平均能量拟合良好，拟合结果分析表明，可以利用统计物理学方法研究地震频率与震级关系，并且以此推断出地壳处于亚稳态。} \\
+
+\textbf{关键词}\quad {地震统计；熵；配分函数；地壳状态}}
+\end{center}
+
+\setcounter{page}{1}
+
+\setlength{\oddsidemargin}{-.5cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{17.00cm}
+
+\section*{\textbf{引言}}
+
+地球物理学是通过定量物理方法研究地球的学科，使用的研究方法通常是传统，经典的物理学定律。如地震学以弹性波传播方程，重力学以引力方程，地磁学以麦克斯韦方程组为主要研究手段。
+Gutenberg et al\supercite{1}收集统计地震数据，分析得到古登堡里赫特定理(每年某震级地震发生数目N的与震级M服从关系$logN=a-bM$)，
+统计地震学由此提出。统计地震学在方法论上与统计物理相当。不过统计地震学已经很大程度上偏离了最初的类似于统计物理的“统计地震学”，而倒退回原来意义上的“地震统计”。
+即利用统计和概率论的方法研究地震发生的数目或频率。国际上将现代概率论与统计的理论和方法应用于地震和地震预测问题的研究，
+近年来已成为统计学和地震学之间的一个最为活跃的交叉领域\supercite{2}。也有不少人研究如何使地震统计回到统计物理学的方法和手段，例如De Santis et al. (2011)\supercite{3}将古登堡里赫特定理与熵结合，计算出地震发生频率的熵。
+
+
+基于古登堡里赫特定理的进一步研究表明，$logN=a-bM$中$b$值与地壳性质有关，b值越大，地壳活动性越强，根据统计已有地震震级记录，可以评估该区域地壳状态。
+地壳状态与地震预测息息相关，Geller\supercite{4}提出地震不能被预测，因为地震可以看作是一种“自组织临界现象”(Self-Organized Criticality)，这表明地壳处于破裂的状态中。
+但一些观测现象表明地壳系统处于亚临界状态(Near Criticality)\supercite{5}，间断的大地震的发生表明地壳系统间歇性的处于临界状态，这表明地震是可以预测的\supercite{6}。因此，判断地壳系统是处于临界或亚临界状态需要更多的研究。
+
+配分函数是系统各个态的玻尔兹曼因子的和，因此配分函数Z包含了系统各个态的能量的所有信息。更为奇妙的是所有热力学量都能由它得到。解统计力学的问题可以约化为写出配分函数，求态函数。\supercite{7}
+因此将配分函数引入地震统计学是统计物理与地震学结合的基础。
+
+本文为检验地壳状态，利用已有的地震统计数据计算地震释放的能量和熵，将统计物理学方法应用于地震学，利用配分函数验证地震能量与熵的关系。从而得到地壳的状态，地壳处于亚临界状态，但会短时间突变至临界状态。
+这表明地震预测是有可能的，但预测误差非常大。
+
+\section{\textbf{原理}}
+在统计物理中，宏观热力学状态分布可以从微观状态得出
+  \begin{equation} \label{ex1}
+    p(E)dE=\frac{g_Ee^{\frac{-E}{\theta}}}{Z}dE
+  \end{equation}
+
+  $\theta=kT$,$k$是玻尔兹曼常数,$T$是开尔文温度,$g_E$是能级简并度,$Z$是配分函数。地震的简并度由于地震释放的能量与地表破裂程度A有关$E~A^{3/2}$
+  Main\supercite{8}提出地震释放能量简并度可以写作
+  \begin{equation}\label{ex2}
+     g_E=E^{-B-1}/E_0^{-B}
+  \end{equation}
+
+  $E_0$是能量归一化常数，等式\ref{ex2}与古登堡里赫特定理结合得到指数$B\approx2/3$
+
+  地震系统能量均值为
+  \begin{equation}\label{ex3}
+     <E>=\int_{E_{min}}^{E^{max}} Ep(E) dE
+  \end{equation}
+
+  熵为
+  \begin{equation}\label{ex4}
+     S=-\int_{E_{min}}^{E{max}} lnp(E)p(E) dE
+  \end{equation}
+
+  %地震能释放的最大能量$E_{max}$上限为地震破裂面积等于所处的板块面积。这远远不能达到，所以$T<<+\infty$即$\theta\rightarrow\infty$。
+  从\ref{ex1}和\ref{ex2}得到
+  \begin{equation}\label{ex5}
+     p(E)dE=\alpha E^{-B-1}exp(-E/\theta)dE
+  \end{equation}
+
+  $\alpha =E_0^{B}Z^{-1}$是归一化常数，利用$p(E)\delta lnE$
+  \begin{equation}\label{ex6}
+     \frac{dlnE}{dE}=\frac{1}{E} \quad or \quad dE=EdlnE
+  \end{equation}
+
+  所以配分函数为
+  \begin{equation}\label{ex7}
+     Z=\int_{E_min}^{E_max}\frac{E}{E_0}^{-B}exp(-\frac{E}{\theta})dlnE
+  \end{equation}
+
+  能量是
+  \begin{equation}
+     <E>=Z^{-1}\int_{E_{min}}^{E_{max}}E(\frac{E}{E_0})^{-B}exp(-\frac{E}{\theta})dlnE
+  \end{equation}
+
+  熵为
+  \begin{align}
+     S & =-Z^{-1}\int_{E_{min}}^{E_{max}}(\frac{E}{E_0})^{-B}exp(-\frac{E}{\theta})ln[\frac{(E/E_0)^{-B}exp(-E/\theta)}{Z}]dlnE \\
+     &=lnZ-BlnE_0+B<lnE>+<E>/\theta
+   \end{align}
+
+   对于地壳接近临界状态时$\theta \rightarrow \infty$，所以 $<E>/\theta$趋近0，所以地壳处于亚临界状态时
+   \begin{equation}
+      \frac{\partial lnZ}{\partial \theta}=\frac{1}{Z}\frac{\partial Z}{\partial \theta}=\frac{<E>}{\theta^2}
+   \end{equation}
+
+   又有当$\theta \rightarrow \infty$ 时，$\partial lnZ/\partial \theta ~0$ 因此$Z \sim constant$结合S的表达式可以推出S和ln<E>有线性关系。假设斜率为B，那么截距$S_0\approx lnZ-BlnE_0$
+
+   综上，地震记录得到的熵和能量应该有关系：
+   \begin{equation}\label{final}
+      S=S_0+B<lnE>
+   \end{equation}
+
+   所以在亚临界态地壳中，应观察到有限的$\theta$，在临界状态地壳中，观察到$\theta \rightarrow \infty$，在超临界状态中观察到$\theta$是负数。
+
+  \section{\textbf{数据和方法}}
+
+  从哈佛大学CMT地震目录中下载1976年-2015年的地震数据（这段时间记录完整且电子化）。震级小于5.4的由于能量太小忽略不记。利用Kanamori\supercite{9}，给出的通用地震能量计算公式：
+  \begin{equation}
+     logE = 1.5M+11.8
+  \end{equation}
+
+  按年统计计算地震记录的能量，利用公式\ref{ex4}计算每年的地震释放能量的熵。尽管每年的地震数目远小于阿伏伽德罗常数。
+
+  \begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.7\textwidth]{./figures/s.png}
+   \caption{ 1976-2015年震级$5.4M_w$以上地震释放平均能量和熵}
+   \label{fig1}
+\end{figure}
+
+  \section{\textbf{结果}}
+
+  1976年-2015年每年计算得到的S，<lnE>结果如图\ref{fig1}所示，每年释放的能量和熵都较为平均，在小范围内浮动。
+
+  对S和<lnE>做线性回归拟合。结果如图\ref{fig2}所示。表现出较强的相关性$r^2=0.7884$，且斜率$B=1.3162$。
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\textwidth]{./figures/line.png}
+   \caption{ 熵与平均能量拟合结果$r^2=0.7884$}
+   \label{fig2}
+\end{figure}
+
+\section{\textbf{讨论与总结}}
+
+我们将每个地震能量分布看作微观状态，以此检验了宏观状态量的关系。结果显示S和<lnE>表现出强烈的正相关性，根据之前的推导，这表明长时间尺度下，地壳处于亚临界状态，即并不处于地壳完全破裂状态。
+同时也说明地震是可以被预测的\supercite{5}。但由于熵和能量处于一个波动状态，某些发生大地震的时间段，地壳会处于临界状态。这样一个接近临界状态的亚稳态说明地震预测误差会比较大，结果有时会不可靠。
+
+我们只考虑了地壳中地震释放出的能量，而其他比如地球内部热辐射散发出的能量也占了地壳能量释放的一部分。但由于技术限制，准确的从地壳释放的能量，并不能得到很好的记录。
+随着卫星观测技术的进步，不少卫星可以监测地壳热能的释放。随着技术的进步，当地壳释放的能量总量可以有更全面，更完善的记录时，对地壳状态估计，会有更新的认识。
+
+我们的结果也表明，源于热力学的统计物理学原理可以用于地震统计的研究。虽然统计物理研究的粒子数量高达几个阿伏伽德罗常数，而地震数目不过几万个。
+下一步将热力学势引入，<E>和S的关系等，都将是下一步研究方向。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\small
+\begin{thebibliography}{99}
+\setlength{\parskip}{0pt}
+% There is no specific requirement on the format of references. You can follow the custom of your research field, and keep consistent throughout the paper.
+\bibitem{1} Gutenberg, B., Richter, C. F., 1956. Magnitude and Energy of Earthquakes. Annali di Geofisica, 9: 1–15
+\bibitem{2} 吴忠良, 蒋长胜,  中国地震 (03), 211 (2007).
+\bibitem{3} Angelo De Santis, Gianfranco Cianchini, Paolo Favali, Laura Beranzoli, and Enzo Boschi,  Bulletin of the Seismological Society of America 101 (3), 1386 (2011).
+\bibitem{4} Robert J. Geller, David D. Jackson, Yan Y. Kagan, and Francesco Mulargia,  Science 275 (5306), 1616 (1997).
+\bibitem{5} Steven C. Jaumé and Lynn R. Sykes, in Seismicity Patterns, their Statistical Significance and Physical Meaning, edited by Max Wyss, Kunihiko Shimazaki, and Akihiko Ito (Birkhäuser Basel, Basel, 1999), pp. 279.
+\bibitem{6} L. R. Sykes, B. E. Shaw, and C. H. Scholz,  pure and applied geophysics 155 (2), 207 (1999).
+\bibitem{7} 鞠国兴. 热物理概念——热力学与统计物理学. 北京: 清华大学出版社. 2015: 228-229.
+\bibitem{8} Ian G. Main and Paul W. Burton, Information theory and the earthquake frequency-magnitude distribution. Bulletin of the Seismological Society of America 74 (4), 1409 (1984).
+\bibitem{9} Kanamori, H. (1977). The energy release in great earthquakes. Journal of Geophysical Research (1896-1977), 82(20), 2981-2987.
+\end{thebibliography}
+
+\end{document}
