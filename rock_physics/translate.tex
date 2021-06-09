@@ -209,7 +209,7 @@ $0.0119\%$钾元素是放射性同位素$_{19}K^{40}$。衰变过程释放能量
         ~&0.42&1.5-3&6-19&BA\\
         ~&0-$0.6^c$[0.35]&1.5-9 &6-42&Sch\\
         \hline
-        \multirow{2}*{亚氯酸盐}&0-0.3&\quad &3-5&Hu\\
+        \multirow{2}*{绿泥石}&0-0.3&\quad &3-5&Hu\\
         ~&0-0.35[0.1]&\quad &\quad &Sch\\
         \hline
         \multirow{2}*{蒙皂石}&0-1.5&1-21&6-44&Hu\\
@@ -559,7 +559,7 @@ U和Th单位是ppm，K是\%。k是仪器的常数，a是与1\%K产生相同辐�
         黑云母 & $\approx 275 $ \\
         高岭石 & $80-130$ \\
         伊利石 & $250-300$ \\
-        亚氯酸盐 & $180-250$ \\
+        绿泥石 & $180-250$ \\
         蒙脱石 & 150-200 \\
         钾盐 & 500+ \\
         光卤石 & $\approx 220$ \\
@@ -640,7 +640,7 @@ $GR_{cn}$是没有页岩的记录，$GR_{sh}$是页岩区的记录，$GR$是观�
 \textit{Hurst (1990)}发表了批判Th-K作图识别砂岩的黏土种类的分析。主要原因是：
 
 \begin{itemize}
-    \item 高岭石和亚氯酸盐岩可忽略的钾含量
+    \item 高岭石和绿泥石可忽略的钾含量
     \item 钍形成粉砂大小的离散自生矿物，而不是吸附在粘土矿物表面的趋势
     \item 不足的数据库和统计分析基础
 \end{itemize}
@@ -856,5 +856,211 @@ U 实际上与孔隙率无关，可以计算为组分的加权（按体积分数
 
 \subsubsection{伽马-伽马-光电效应测量辨别矿物}
 
+光电效应系数(PE)是现代密度测井工具的一种补充。此方法通过测量原子的b/e来测量低能量伽马辐射的吸收。在低能量范围 (<100 keV)的伽马-伽马测量得到与地层中的（平均）原子序数 Z强相关的结果（平均每个电子的光电截面）。因此是一个对矿物敏感的结果。
 
+如果密度也被测量（见下一节），参数 U（平均每$cm^3$的光电截面积）也可以被计算得到。
+
+表\ref{tb13}显示了造岩矿物的几个重要特性。平均荷质比 Z/A，光电捕获截面，PE 和 U，对于各种矿物来说可能大不相同。
+
+\begin{table}[!h]
+    \centering
+    \caption{物质的伽马伽马辐射相互作用性质}
+    \label{tb13}
+    \begin{tabular}{l|l|l|l|l|l}
+        \hline
+        物质类型 & 体密度 & 测井密度 & Z/A & PE(b/e) & U($b/cm^3$) \\
+        \hline
+        \multicolumn{6}{l}{矿物} \\
+        石英 & 2.65 & 2.64 & 0.499 & 1.81 & 4.8 \\
+        方解石 & 2.71 & 2.71 & 0.500 & 5.08 & 13.8 \\
+        白云石 & 2.87 & 2.87 & 0.499 & 3.14 & 9.0 \\
+        菱铁矿 & 3.94 & 3.89 & 0.483 & 14.69 & 57 \\
+        岩盐 & 2.16 & 2.03 & 0.479 & 4.65 & 9.5 \\
+        石膏 & 2.31 & 2.33 & 0.511 & 3.99 & 9.4 \\
+        硬石膏 & 2.96 & 2.98 & 0.499 & 5.06 & 15 \\
+        重晶石 & 4.48 & 4.09 & 0.466 & 266.8 & 1066 \\
+        正长石 & 2.56 & 2.53 & 0.496 & 2.86 & 7.3 \\
+        钠长石 & 2.62 & 2.59 & 0.496 & 1.68 & 4.4 \\
+        白云母 & 2.83 & 2.82 & 0.497 & 2.40 & 6.7 \\
+        黑云母 & 3.01 & 2.99 & 0.493 & 6.27 & 19 \\
+        蒙脱石 & 2.06 & 2.02 & 0.502 & 2.04 & 4.0 \\
+        高岭石 & 2.59 & 2.61 & 0.504 & 1.49 & 4.4 \\
+        伊利石 & 2.64 & 2.63 & 0.499 & 3.45 & 8.7 \\
+        绿泥石 & 2.88 & 2.88 & 0.497 & 6.30 & 17 \\
+        海绿石 & 2.58 & 2.54 & 0.494 & 6.37 & 16.2 \\
+        \hline
+        \multicolumn{6}{l}{液体} \\
+        \hline
+        水 & 1.00 & 1.11 & 0.555 & 0.36 & 0.40 \\
+        油 & 0.80 & 0.79 & 0.57 & 0.125 & 0.11 \\
+    \end{tabular}
+\end{table}
+
+特别值得注意的是储层中的造岩矿物的差异性质：石英(PE=1.81 barns/electron; U=4.8 barns/$cm^3$)，方解石(PE= 5.08barns/electron; U=13.8 barns/$cm^3$)和白云石(PE=3.14 barns/electron; U=9.0 barns/$cm^3$)。这使通过交叉关系图估计矿物的种类成为可能。（5.6部分）
+
+重晶石极高的PE和U值，使得当泥中含有重晶石时会影响观测。
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig11.jpg}
+    \caption{Th/K与U交叉关系图}
+    \label{fig11}
+\end{figure}
+
+另一方面，表\ref{tb9}表明，不同的矿物具有几乎相同的PE水平。例如，绿泥石、黑云母和海绿石值都是$PE \approx 6b/e$（图\ref{fig11} 中的红线）。如果在相同的地层中，比率Th/K=2观察到（蓝线），交叉的地方对应于黑云母，与伽马辐射光谱测量的组合可以得出准确的结果。
+
+\subsubsection{伽马-伽马-密度测量和渗透率估计}
+
+康普顿能量区 (0.5-5 MeV) 中的伽马-伽马方法测量由每单位体积的轨道电子数控制的目标响应。常用的放射源是铯 (0.66 MeV) 和钴（1.17 和 1.33 MeV）。
+
+每个体积的原子数是：
+
+\begin{equation}
+    \label{eq14}\\
+    n_a=N_A\cdot (\frac{\rho_b}{A})
+\end{equation}
+
+$N_A$是阿伏伽德罗常数，A是原子质量，$\rho_b$是体密度。每个单位体积内电子数是：
+
+\begin{equation}
+    \label{eq15}\\
+    n_e=Z\cdot n_a=N_A\cdot(\frac{Z}{A})\cdot \rho_b
+\end{equation}
+
+决定康普顿效应的电子密度$\rho_e$，定义为：
+
+\begin{equation}
+    \label{eq16}\\
+    \rho_e=2\cdot \rho_b \cdot \frac{Z}{A}
+\end{equation}
+
+体密度是
+
+\begin{equation}
+    \label{eq17}\\
+    \rho_b=\frac{\rho_e}{2\cdot Z/A}
+\end{equation}
+
+因此，$\rho_b$与（测量的）电子密度$\rho_e$和岩石的平均比值Z/A。对于大部分造岩矿物，比值Z/A接近常数0.5（表\ref{tb13}）：
+
+\begin{equation}
+    \label{18}\\
+    \frac{Z}{A}\approx 0.5
+\end{equation}
+
+在这个条件下，$\rho_b \approxeq \rho_e$，这个方法可以直接得到体密度单位。
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig12.jpg}
+    \caption{电子密度的体密度决定康普顿效应的推导}
+    \label{fig12}
+\end{figure}
+
+图\ref{fig12}展示了电子密度的体密度推导过程。
+
+如果该比率Z/A偏离了Z/A=0.5，则必须进行修正。对于 Z/A=0.55 的水的存在尤其如此。 这校正结果来自两个主要的成分：基质和水的体积加权贡献。
+
+\begin{equation}
+    \label{eq19}\\
+    \rho_b=\frac{\rho_e}{1\cdot (1-\phi)+1.11\cdot \phi}=\frac{\rho_e}{1+0.11\cdot \phi}
+\end{equation}
+
+$\phi$是渗透率
+
+从体密度可以得到渗透率：
+
+\begin{equation}
+    \label{eq20}\\
+    \phi=\frac{\rho_{solid}-\rho_b}{\rho_{solid}-\rho{fluid}}
+\end{equation}
+
+因此，对于从密度测量得到的孔隙度，已知岩石基质密度$\rho_{solid}$和流体密度$\rho_{fluid}$ 是必要的。关于基质矿物的信息可以从地质资料、交会图方法中获得（见5.6部分）和 PE 测量。
+
+\subsection{中子放射的相互作用}
+
+\subsubsection{基础知识}
+
+例如，\textit{Alger et al. (1971)}和\textit{Allen et al. (1972)}介绍了中子对数的基本原理。以及一系列岩石物理学教程(SPWLA)由\textit{Ellis et al. (2003,2004)}和\textit{Gilchrist (2009)}编撰。
+
+中子的质量为$1.67482*10^{-27}kg$，不带电，具有很强的可穿透性。
+
+中子可以根据能量分类：
+
+\begin{itemize}
+    \item 快中子：能量>500keV
+    \item 中等能量中子：能量1keV-500keV
+    \item 慢中子：<1keV还可以被分为：超热中子(0.1eV-1keV)和热中子(<0.1eV)
+\end{itemize}
+
+对于中子测量，使用源探测器系统。中子源有：
+
+\begin{itemize}
+    \item \ce{^{252}Cf} 自发裂变；大部分中子能量在(250keV和2MeV之间)比较低。这个源在勘探中并不常用。(\textit{Hearst and Nelson, 1985})
+    \item 化学或$\alpha -n$源（比如Am-Be）：$\alpha$发射的混合物(Am) 和铍反应产生中子，其能量介于1 MeV 和 12 MeV； 平均能量约为 4.2 MeV（\textit{Ellis ei al.，2003}）。 该源广泛用于实际应用。
+    \item 中子发生器：由加速器驱动的氘-氚反应产生能量为 14.1 MeV 的中子。 中子发生器与其他来源相比有一些优势：它们可以关闭和打开，它们产生高且精确定义的能量，它们可以在脉冲模式下使用。
+\end{itemize}
+
+中子与原子核相互作用；它们在这些过程中转移并失去能量。有两种基本的相互作用类型：
+\begin{enumerate}
+    \item 缓和或减慢相互作用（非弹性散射、弹性散射）
+    \item 吸收相互作用，如果它们（捕获、激活）热能。
+\end{enumerate}
+
+与单核相互作用的概率由交叉面积$\sigma$。经常用于显微交叉面积的单位是barn($1\text{barn}=10^{-24}cm^2$)。当考虑与宏观物体相互作用，利用宏观交叉面积$\sum$更方便。
+
+\begin{equation}
+    \label{eq21}
+    \sum =n_a \cdot \sigma
+\end{equation}
+
+$n_a$是单位体积内原子数，$\sum$单位是$cm^{-1}$。平均自由程定义为$\lambda = \sum^{-1}$。(\textit{Hearst and Nelson, 1985})
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig13.jpg}
+    \caption{作为能量函数的中子现象（以 MeV 为单位）。 中子源和能量区域显示在底部。 顶部是反应和过程的类型绘制。}
+    \label{fig13}
+\end{figure}
+
+图\ref{fig13}说明了中子诞生到消失的过程，并将从高能级到低能级描述。
+
+\begin{table}[!h]
+    \centering
+    \caption{非弹性散射和捕获：一些发射伽马辐射的特征性能量}
+    \label{tb14}
+    \begin{tabular}{l|l|l}
+        \hline
+        元素 & 伽马能量(MeV)非弹性散射 & 伽马能量(MeV)捕获 \\
+        \hline
+        H & \quad & 2.2\\
+        O & 6.1, 7.0 & \quad \\
+        C & 4.43 & \quad \\
+        Si & 1.78 & 3.5, 4.9 \\
+        S & 2.2 & 3.2, 4.9, 5.4 \\
+        Ca & 3.7 & 2.0, 4.4, 6.4 \\
+        Al & 2.2 & 7.7 \\
+        Mg & \quad & 3.9 \\
+        Fe & \quad & 6.0, 7.3, 7.6 \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \caption{热化一个14 MeV 中子所需的平均碰撞次数$n_{co}$}
+    \label{tb15}
+    \begin{tabular}{l|l|l|l}
+        \hline
+        元素 & $n_{co}$ & 元素 & $n_{co}$ \\
+        \hline
+        H & 19 & Al & 290 \\
+        C & 112 & Si & 297 \\
+        O & 152 & Cl & 343 \\
+        Mg & 235 & Ca & 380 \\
+    \end{tabular}
+\end{table}
+
+\paragraph{非弹性散射}
+
+快中子与原子序数为 Z 和质量的原子核相互作用编号A。该过程形成具有原子序数Z和质量数 A+1，处于激发态。它衰减到基态（与初始目标核相同），发射：
 \end{document}
