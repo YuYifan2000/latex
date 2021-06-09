@@ -510,7 +510,7 @@ d:一些蒙脱石可能对应于不完全降解的白云母或不完整的通过
     \item 如果钾存在或不存在铀，它可以对应于藻类来源的碳酸盐岩或海绿石碳酸盐岩。
 \end{itemize}
 
-\subsection{光谱和整体测量-API单位}
+\subsubsection{光谱和整体测量-API单位}
 
 在地球物理现场实际测量中，测量伽马辐射的两种技术是：光谱测量和整体测量。
 
@@ -779,7 +779,82 @@ A的单位是$\mu W/m^3$，GR是伽马辐射强度，单位API。
     \end{tabular}}
 \end{table}
 
-\subsection{伽马辐射间相互作用}
+\subsection{伽马辐射的相互作用}
+
+基于伽马辐射与岩石相互作用进行探测的方法使用伽马源和伽马探测器。 结果取决于伽马辐射的能量和目标（岩石）的放射性特性。这会产生两个效应，对应两种测量结果模式：
+
+\begin{enumerate}
+    \item 光电效应，对应光电截面（PE）测量。
+    \item 康普顿效应，对应伽马-伽马密度测量。
+\end{enumerate}
+
+\subsubsection{基础知识}
+
+从伽马源发射的伽马光子与测量目标相互作用，会失去部分或全部能量。 在最简单的公式中，这中准直光束可以表示为：
+
+\begin{equation}
+    \label{eq11}\\
+    \Psi = \Psi_0\cdot exp(-\alpha\cdot x)
+\end{equation}
+
+$\Psi$是穿过目标后的能流，$\Psi_0$是未穿过目标的能流，x是目标厚度，$\alpha$是目标吸收过程的系数。
+
+伽马辐射与物质之间存在三个相互作用的过程：
+
+\begin{enumerate}
+    \item 光电效应（低能量）
+    \item 康普顿效应（中等能量）
+    \item 电子对生成（高能量）
+\end{enumerate}
+
+相互作用的概率不仅取决于伽马的能量源，也取决于目标的原子序数 Z。 图\ref{fig10}显示 Z与源三种效应的相对重要性能量图。灰色区域表示普通岩石的元素。
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig10.jpg}
+    \caption{三种伽马效应和Z的关系能量图。线表示两种效应发生概率一样。}
+    \label{fig10}
+\end{figure}
+
+\paragraph{5.3.1.1 光电效应}
+
+入射低能量的伽马光子 (<0.2 MeV) 与原子碰撞。 如果伽马光子的能量等于或超过离散结合能一个轨道电子，那么：
+
+\begin{itemize}
+    \item 伽马光子释放能量给环绕电子
+    \item 电子离开其轨道并具有动能 $E_{kin}=\text{伽马射线能量}-\text{电子结合能}$。
+\end{itemize}
+
+光电效应的概率由伽马射线的能量和吸收物体的原子序数决定。在实际应用中，用到了两个参数：
+
+\begin{itemize}
+    \item 以 b/e 为单位的光电横截面指数（每个电子的Barn(一个面积单位)）\\ 
+    \begin{equation}
+        \label{eq12}\\
+        PE=(\frac{Z}{10})^{3.6}
+    \end{equation}
+    \item 体积光电截面 U，单位 $b/cm^3$：\\
+    \begin{equation}
+        \label{eq13}\\
+        U=PE\cdot \rho_e
+    \end{equation}
+\end{itemize}
+
+U 实际上与孔隙率无关，可以计算为组分的加权（按体积分数）平均值。
+
+\paragraph{5.3.1.2 康普顿效应}
+
+一个入射的中等能量伽马光子（伽马射线）与一个原子碰撞。它与一个轨道电子发生散射，并且仅传输其一部分能量。散射能量和射出电子的动能（康普顿或反冲电子）可以通过能量和动量守恒计算（\textit{Hearst and Nelson，1985}）。 散射角依赖于能量而分布。
+
+康普顿效应的概率由单位体积内的电子数决定。
+
+\paragraph{5.3.1.3 电子对生成}
+
+一个入射的高能伽马光子（伽马射线能量>1.022 MeV\footnote[1]{1.02MeV刚好是两倍电子静质量($mc^2$)}）当它靠近原子核时可以转化为正负电子对。
+
+光电效应和康普顿效应已经应用于地球科学。 两个效应都导致伽马辐射衰减，表示为在方程式\ref{eq11}中。吸收系数与不同效应有关。
+
+\subsubsection{伽马-伽马-光电效应测量辨别矿物}
 
 
 \end{document}
