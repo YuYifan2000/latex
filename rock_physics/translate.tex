@@ -17,8 +17,15 @@
 \usepackage[version=4]{mhchem}
 \usepackage{multirow}
 \usepackage{longtable}
+\usepackage{bm}
+\usepackage{hyperref}
 
-
+\hypersetup{hidelinks,
+	colorlinks=true,
+	allcolors=black,
+	pdfstartview=Fit,
+	breaklinks=true
+}
 % Please change the following fonts if they are not available.
 \setmainfont{Times New Roman}
 \setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
@@ -966,16 +973,16 @@ $N_A$是阿伏伽德罗常数，A是原子质量，$\rho_b$是体密度。每个
     \rho_b=\frac{\rho_e}{1\cdot (1-\phi)+1.11\cdot \phi}=\frac{\rho_e}{1+0.11\cdot \phi}
 \end{equation}
 
-$\phi$是渗透率
+$\phi$是孔隙率
 
-从体密度可以得到渗透率：
+从体密度可以得到孔隙率：
 
 \begin{equation}
     \label{eq20}\\
     \phi=\frac{\rho_{solid}-\rho_b}{\rho_{solid}-\rho{fluid}}
 \end{equation}
 
-因此，对于从密度测量得到的孔隙度，已知岩石基质密度$\rho_{solid}$和流体密度$\rho_{fluid}$ 是必要的。关于基质矿物的信息可以从地质资料、交会图方法中获得（见5.6部分）和 PE 测量。
+因此，对于从密度测量得到的孔隙率，已知岩石基质密度$\rho_{solid}$和流体密度$\rho_{fluid}$ 是必要的。关于基质矿物的信息可以从地质资料、交会图方法中获得（见5.6部分）和 PE 测量。
 
 \subsection{中子放射的相互作用}
 
@@ -1086,7 +1093,7 @@ A是目标原子质量$\Theta$是散射角度。
 
 A = 1（氢）是最大能量损失结果。氢有与中子的质量相同（表\ref{tb15}）\footnote[2]{一个中子在与一个氢原子碰撞时，失去所有能量}。表\ref{tb11} 说明了这种氢的主要的影响，通过比较某元素需要的以热化 14-MeV 中子的平均碰撞次数对。
 
-因此，我们可以得出结论，弹性散射作为最常见的相互作用，以氢 (H) 为主。 氢含量控制弹性散射强度；这是因为与含水量相关或“中子孔隙率”。 但其他元素也会与中子辐射相互作用；这会导致用于中子孔隙度测定的“基质效应”
+因此，我们可以得出结论，弹性散射作为最常见的相互作用，以氢 (H) 为主。 氢含量控制弹性散射强度；这是因为与含水量相关或“中子孔隙率”。 但其他元素也会与中子辐射相互作用；这会导致用于中子孔隙率测定的“基质效应”
 
 \paragraph{5.4.1.3 辐射俘获}
 
@@ -1130,11 +1137,11 @@ A = 1（氢）是最大能量损失结果。氢有与中子的质量相同（表
     \label{fig15}
 \end{figure}
 
-\subsubsection{中子测量渗透率}
+\subsubsection{中子测空隙率}
 
-传统的商业中子测量工具由一个中子源（或中子发生器）和两个相互作用后的辐射探测器组成。地层孔隙度由两个检测器的计数比决定。\textit{Gilchrist, 2009}
+传统的商业中子测量工具由一个中子源（或中子发生器）和两个相互作用后的辐射探测器组成。地层孔隙率由两个检测器的计数比决定。\textit{Gilchrist, 2009}
 
-因为在储层岩中，主要的弹性散射主要由氢控制，这样的系统提供有关“氢浓度”的信息，由地层中的水或碳氢化合物控制。这创造了术语“中子孔隙率”。 以下部分将讨论中子测量得到孔隙度的条件。
+因为在储层岩中，主要的弹性散射主要由氢控制，这样的系统提供有关“氢浓度”的信息，由地层中的水或碳氢化合物控制。这创造了术语“中子孔隙率”。 以下部分将讨论中子测量得到孔隙率的条件。
 
 图\ref{fig15}显示了多孔岩石的简化图片，其中包含各种固体和流体成分。 作为通用规则，不同的反应表明：
 
@@ -1159,12 +1166,12 @@ A = 1（氢）是最大能量损失结果。氢有与中子的质量相同（表
     \item 在含水石灰岩地层中，测量结果准确，即真正的孔隙率。
     \item 在不同的组成中需要进行修正，因为与石灰石比较，不同的基质（砂岩、白云石）具有不同的中子效应。
     \item 在不同的孔隙流体中，校正是必要的。因为不同的流体（天然气、石油）与淡水相比具有不同的中子效应。气体的 H 浓度特别低； 因此，该工具在多孔气体区中读取低孔隙率。
-    \item 在页岩区，修正是必要的。因为测量受大量 H 和高中子孔隙度读数的影响。
+    \item 在页岩区，修正是必要的。因为测量受大量 H 和高中子孔隙率读数的影响。
 \end{itemize}
 
-如果岩石组分的中子响应表示为“中子孔隙度”$\Phi_N$，那么纯石灰岩（方解石）有$\Phi_N\equiv0$，淡水有$\Phi_N\equiv 1$。表\ref{tb16}给出了更多关于流体和固体岩石成分的数据。
+如果岩石组分的中子响应表示为“中子孔隙率”$\Phi_N$，那么纯石灰岩（方解石）有$\Phi_N\equiv0$，淡水有$\Phi_N\equiv 1$。表\ref{tb16}给出了更多关于流体和固体岩石成分的数据。
 
-对于任何由不同矿物成分组成的多孔岩石，页岩和流体，来自石灰石淡水校准装置的孔隙度结果为
+对于任何由不同矿物成分组成的多孔岩石，页岩和流体，来自石灰石淡水校准装置的孔隙率结果为
 
 \begin{equation}
     \label{eq24}
@@ -1173,7 +1180,7 @@ A = 1（氢）是最大能量损失结果。氢有与中子的质量相同（表
 
 \begin{table}[!h]
     \centering
-    \caption{一些岩石成分的中子响应，写成中子渗透率$\Phi_N$形式}
+    \caption{一些岩石成分的中子响应，写成中子孔隙率$\Phi_N$形式}
     \label{tb16}
     \begin{tabular}{l|l|l|l}
         \hline
@@ -1198,15 +1205,15 @@ $\Phi$是岩石孔隙率，$\Phi_N$是测量的中子孔隙率，$\Phi_{N,fluid}
 
 图\ref{fig16}展示了展示了不同矿物学、不同孔隙流体和页岩存在的影响。
 
-因此，对于根据中子测量值进行精确的孔隙度计算，流体的中子响应，基质效应，页岩的中子响应和页岩含量是必要的信息。
+因此，对于根据中子测量值进行精确的孔隙率计算，流体的中子响应，基质效应，页岩的中子响应和页岩含量是必要的信息。
 
-中子孔隙度是交会图技术的重要组成部分，结合矿物学-孔隙度计算，以估计基质组成和孔隙率。（5.6部分）
+中子孔隙率是交会图技术的重要组成部分，结合矿物学-孔隙率计算，以估计基质组成和孔隙率。（5.6部分）
 
 \subsection{反射性测量应用矿物分析}
 
 \subsubsection{引言}
 
-确定岩石的矿物成分（矿物学）是至关重要的尤其是在确定储层方面的非常重要。矿物组成决定基质的属性并直接决定导出孔隙度的准确性。但矿物质含量和成分也提供了有关岩石形成过程和由此产生的岩石特性的信息。 在碳酸盐岩中，矿物组成与孔隙空间性质和孔隙类型有关。
+确定岩石的矿物成分（矿物学）是至关重要的尤其是在确定储层方面的非常重要。矿物组成决定基质的属性并直接决定导出孔隙率的准确性。但矿物质含量和成分也提供了有关岩石形成过程和由此产生的岩石特性的信息。 在碳酸盐岩中，矿物组成与孔隙空间性质和孔隙类型有关。
 
 传统的放射性测量方法（自然伽马辐射测量、伽马-伽马相互作用测量、中子相互作用测量) 提供了使用确定的特征或倾向进行初始分类的可能性。例子是：
 
@@ -1216,5 +1223,328 @@ $\Phi$是岩石孔隙率，$\Phi_N$是测量的中子孔隙率，$\Phi_{N,fluid}
     \item PE鉴定高密度的硬石膏(2.96$g/cm^3$)。
 \end{itemize}
 
+为了更详细和可靠地测量矿物成分，已经开发了基于放射性光谱测量的元素分析。放射性测量的物理过程直接与某些元素的反应相关。因此，一般的放射性测量能够提供“元素信息”。
+
+在碳酸盐岩矿物学中，在某些情况下PE测量可以区分方解石和白云石。 但如果重晶石存在于泥浆中，或地层中含有硬石膏时，PE方法有问题。
+
+使用脉冲中子发生器的中子伽马能谱方法可以提供各种元素浓度的信息，利用伽马射线在非弹性散射或中子俘获事件中产生的射线。 不同的岩石成分中的元素在表\ref{tb17}中
+
+\begin{table}[!h]
+    \centering
+    \caption{伽马光谱法检测到在岩石和流体中的元素}
+    \label{tb17}
+    \begin{tabular}{l|lp{4cm}p{8cm}}
+        \hline
+        元素 & 存在位置 \\
+        \hline
+        H & 水，碳水化合物，黏土 \\
+        Ca & 方解石，白云石，硬石膏 \\
+        Si & 石英，黏土 \\
+        Cl & 岩盐 \\
+        S & 硬石膏 \\
+        Fe & 黄铁矿，黏土 \\
+        C & 碳水化合物，方解石，白云石 \\
+    \end{tabular}
+\end{table}
+
+\subsubsection{原理}
+
+现代方法和工具，如“元素捕获光谱探测器 ECS”， Schlumberger 的“EcoScope”和“地层岩性探索器”(FLeX)”设备结合解释系统“RockView”和 Baker Atlas 基于模型假设矿物成分，确定某些元素浓度并计算。
+文章有\textit{Hertzog et al. (1987), Gilchrist et al. (1999,2000), Barson et al. (2015), Pemper et al. (2006) and Han et al. (2009)}
+
+放射性光谱方法提供某些元素的重量分数（见下文），但当然，他们无法提供完整的矿物分析。 所以，就可检测元素而言，确定矿物成分需要使用典型的矿物成分模型。在实际应用中，典型的是：
+
+\begin{itemize}
+    \item 总粘土、总碳酸盐和石英、长石和云母（QFM）的岩石圈比例
+    \item 岩石圈的砂岩、页岩、煤、碳酸盐岩和蒸发岩的比例。
+\end{itemize}
+
+某些元素的浓度包括：
+
+\begin{itemize}
+    \item 沉积岩中一些最容易识别和最丰富的元素，特别是 Si、Ca、Fe、S
+    \item 一些容易识别但不丰富的元素，如钛 (Ti)和钆 (Gd)
+    \item 大量元素如H和Cl
+\end{itemize}
+
+在许多情况下，从元素到矿物的转化需要准确的粘土含量测定，然后结合分析剩余的矿物和更详细的组成。算法使用的是矿物标准样品。
+
+\subsubsection{例子}
+
+例如对“Atlas RockView”的解释过程的主要步骤如下：
+
+\begin{center}
+    元素 $\rightarrow$ 大致岩性 $\rightarrow$ 准确岩性 $\rightarrow$ 矿物
+\end{center}
+
+\paragraph{5.5.3.1 元素含量测定}
+
+放射性测井系统使用脉冲中子源并测量非弹性散射和捕获伽马射线能谱。基质反光谱拟合算法分析这些光谱，以便将总响应分成它的各个元素组成。
+
+与地下岩层相关的测量元素包括钙、硅、镁、碳、硫、铝和铁。钾、钍和铀分别用天然伽马射线光谱仪测量。
+
+因此，工具和数据处理措施（检测和量化）：
+
+\begin{itemize}
+    \item 从天然放射能量：K、U和Th
+    \item 从捕获光谱：Ca、Si、S、Fe、Ti、Gd 和 Mn
+    \item 从非弹性光谱：Si、Mg、Al和C
+\end{itemize}
+
+\paragraph{5.5.3.2 得到大致岩性}
+
+岩性分为几类，包括砂岩、页岩、煤、碳酸盐岩和蒸发岩。仪器结果可用于对每个元素进行鉴定，通过将其与已知化学成分的地层匹配。图\ref{fig17}展示了基本岩性的捕获光谱和非弹性光谱。
+
+一下普遍的观测：
+
+\begin{itemize}
+    \item Ca 和 C 能量峰在石灰岩地层中普遍存在，Si在砂岩中非常明显
+    \item 白云岩中可观察到Ca、Mg、C； 并且在硬石膏中可以区分 Ca 和 S
+    \item 由于粘土和长石的存在，铝能量峰值在页岩地层中突出
+\end{itemize}
+
+\paragraph{5.5.3.3 准确岩性和矿物组成}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig17.jpg}
+    \caption{基本类岩性的非弹性散射和捕获能量光谱}
+    \label{fig17}
+\end{figure}
+
+\begin{table}[!h]
+    \centering
+    \caption{可检测元素和常见沉积矿物（在矿物化学方程式中可检测到的元素以粗体显示）}
+    \label{tb18}
+    \begin{tabular}{l|l|lp{5cm}p{3cm}p{8cm}}
+        \hline
+        测量结果 & 矿物 & 化学方程式 \\
+        \hline
+        元素含量 & \multicolumn{2}{l}{硅酸岩} \\
+        \cline{2-3}
+        K & 石英 & \ce{\textbf{Si}O2} \\
+        \cline{2-3}
+        Th & 钾长石 & \ce{\textbf{KAlSi}3O8} \\
+        \cline{2-3}
+        U & 钠长石 & \ce{Na\textbf{AlSi}3O8} \\
+        \cline{2-3}
+        Ca & \multicolumn{2}{l}{硅酸岩} \\ 
+        \cline{2-3}
+        Fe & 方解石 & \ce{\textbf{CaC}O3} \\
+        \cline{2-3}
+        Gd & 白云石 & \ce{\textbf{CaMgC}O3} \\
+        \cline{2-3}
+        Mg & 菱铁矿 & \ce{\textbf{FeC}O3} \\
+        \cline{2-3}
+        S & \multicolumn{2}{l}{蒸发岩} \\ 
+        \cline{2-3}
+        Si& 硬石膏 & \ce{\textbf{CaS}O4} \\
+        \cline{2-3}
+        Ti & 岩盐 & \ce{NaCl} \\
+        \cline{2-3}
+        Al & \multicolumn{2}{l}{黏土矿物} \\
+        \cline{2-3}
+        C & 伊利石 & \ce{\textbf{K}_{1-1.5}\textbf{Al}4(\textbf{Si}_{7-6.5}\textbf{Al}_{1-1.5})O20(OH)4} \\
+        \cline{2-3}
+        H & 绿泥石 & \ce{(\textbf{Mg,Fe,Al})6(\textbf{Si,Al})4O10(OH)8} \\
+        \cline{2-3}
+        O & 高岭石 & \ce{\textbf{Al}4\textbf{Si}4O10(OH)8}\\
+        \cline{2-3}
+        \quad & 海绿石 & \ce{\textbf{K}0.7(\textbf{Mg,Fe2,Al})(\textbf{Si4,Al10})O2(OH)} \\
+        \cline{2-3}
+        \quad & \multicolumn{2}{l}{含铁矿物} \\
+        \cline{2-3}
+        \quad  & 黄铁矿 & \ce{\textbf{FeS}2} \\
+        \quad  & 赤铁矿 & \ce{\textbf{Fe}2O3} \\
+    \end{tabular}
+\end{table}
+
+常见类别（砂岩、页岩、煤、碳酸盐岩、蒸发岩）的区分是对特定岩性进行更详细的评估的基础。 以碳酸盐岩为例，根据钙的含量得出是方解石或白云石和镁。中间步骤的目的是提供机会识别并限制随后岩石中其他矿物的评估。
+
+解释过程的最后一步是得到特定的岩性。 表\ref{tb18}提供了一些用于鉴定地层的常见沉积矿物信息。潜在可识别的矿物有石英、钾长石、钠长石、方解石、白云石、菱铁矿、硬石膏、伊利石/蒙脱石、高岭石、海绿石、绿泥石、黄铁矿等。
+
+准确的岩性分类对最终的岩石物理解决方案有所限定。例如长石砂岩，人们可能希望预测伊利石/蒙脱石、绿泥石和高岭石的存在，依靠各种长石分解模型。 类似地，可以预测钙质白云岩，是一种特殊的碳酸盐岩，主要由白云石和少量方解石以及可能的硬石膏组成。(\textit{Pemper et al., 2006})
+
+算法基于334个来自文献的化学和矿物学的样品，以及大量 (463) 岩心样本。
+
+中子俘获光谱是 Schlumberger “碳酸盐顾问”（www.slb.com/carbonates）的一个集成组件。对于碳酸盐岩，测量镁和硫可用于辨别方解石和硬石膏以及硬石膏体积估计（低估硬石膏含量导致低估颗粒密度和低估总孔隙率）。
+使用手册给出了一个例子并证明了“在岩性-孔隙率分析中加入中子能谱法识别硬石膏可以改进孔隙率估计，最高可达比三重组合测井得到的孔隙率高 2 个pus（孔隙率单位）”。
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig18.jpg}
+    \caption{碳含量的扫描分析：TC，总碳； TIC，总无机物碳; TOC，总有机碳； 红点是TOC的核心数据。\textit{Schlumberger (2012)}}
+    \label{fig18}
+\end{figure}
+
+根据 \textit{Radtke et al. (2012)}, 在非常规油藏, 综合捕获和非弹性伽马射线光谱方法测量“碳准确，考虑到碳酸盐矿物中的无机碳，并确定总量有机碳（TOC）”。 这种方法是在 \textit{Schlumberger (2012)} 中实现的，在研究“LithoScanner 准确测定非常规样品的 TOC实验中”。
+图\ref{fig18} 展示了一个例子：左图给出总碳TC（黑色曲线），源自非弹性测量，但也包括使用捕获光谱元素计算的碳酸盐矿物总无机碳 TIC（蓝色阴影）。 绿色阴影的差异是总有机含量 TOC。 右图显示了来自中子光谱的 TOC与红芯数据相比。
+
+\subsection{伽马-伽马相互作用密度和中子孔隙率结合——多种孔隙率方法}
+
+\subsubsection{引言}
+
+很多岩石地球物理数据解释可以方程式化如下：
+
+\begin{itemize}
+    \item 给定的输入是测量的结果（例如：密度、中子孔隙率、弹性波速度）
+    \item 要求的输出是不同的岩石地球物理参数（例如：孔隙率，矿物体积分数，水饱和度）
+\end{itemize}
+
+如果响应方程为已知这两种类型的参数，并且如果有至少与未知参数一样多的已知条件输入，方程可以有数值解。 这是经典的数据分析问题。
+
+对于线性响应方程，综合解释使用体积模型。这些线性响应方程是合理的：
+
+\begin{itemize}
+    \item 对于标量性质（例如：密度，放射性）
+    \item 对某些张量性质的近似值的限制（例如：使用Wyllie方程计算速度或慢度，请参阅下一章）
+\end{itemize}
+
+\subsubsection{伽马-伽马辐射密度和中子测量确定岩石组成体积分数}
+
+孔隙率是储层研究的关键参数。 如果基质和流体属性是已知的，从伽马-伽马密度和中子孔隙率可计算孔隙率。这对于具有复杂基质问题比较复杂。一个典型的例子是方解石和白云石的混合物；那么测量的方程是：
+
+\begin{align}
+    \rho = V_{\mbox{方解石}}\cdot &\rho_{\mbox{方解石}}+V_{\mbox{白云石}}\cdot \rho_{\mbox{白云石}}+\Phi\rho_{\mbox{流体}} \label{eq25} \\
+    \Phi_N=V_{\mbox{方解石}}\cdot &\Phi_{N,\mbox{方解石}}+V_{\mbox{白云石}}\cdot \Phi_{N,\mbox{白云石}}+\Phi \cdot \Phi_{N,\mbox{液体}} \label{eq26} \\
+    V_{\mbox{方解石}}&+V_{\mbox{白云石}}+\Phi=1 \nonumber
+\end{align}
+
+$\rho$是体密度，$\Phi_N$是中子孔隙率，$\Phi$是体积孔隙率。
+
+下标表示基质和流体。对于石灰石校准中子设施：$\Phi_{N,\mbox{方解石}}=0$。
+
+两种技术——图像，使用交叉图，以及数学模拟，使用数学形式代表——是为了解决此类问题并得到有关孔隙率和矿物成分的信息。
+
+\paragraph{5.6.2.1 交叉图}
+
+交叉图是响应方程的二维图形表示。交叉图显示了任何两个“孔隙率敏感”特性的变化（例如密度和中子，还有慢度，见下一章）。将全部性质组合是可能的：
+
+\begin{itemize}
+    \item 中子-密度图
+    \item 密度-慢度图
+    \item 慢度-中子图
+\end{itemize}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig19.jpg}
+    \caption{计算得到的中子密度交叉图：x轴是灰岩校准过的中子密度；y轴是体密度。三条线分别是砂岩、灰岩、白云岩。}
+    \label{fig19}
+\end{figure}
+
+最常用的图是中子密度交叉图。 图\ref{fig19}显示了三个主要储层的中子密度交会图的原理岩石成分：砂岩、石灰岩和白云岩。图从左下角开始，上升到右上角“水点”。 这三条线分别表示了纯石灰岩、白云岩和砂岩。线按孔隙率单位缩放。
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig20.jpg}
+    \caption{中子密度交叉图。数据来源于一个碳酸盐岩区域。\textit{Schlumberger 2000, 2013}}
+    \label{fig20}
+\end{figure}
+
+对于实际使用，仅绘制孔隙率<0.50的部分。交叉图出现在所有图表书中（例如 \textit{Baker Atlas，1985；Schlumberger，2013 }），其中一些图是为特定的工具和不同的流体特性（水的盐度）设计。图\ref{fig20}是这样一个例子。
+白云岩和砂岩曲线与直线的偏差，有助于更好地近似（实际数据）。 绘图允许估计矿物学（岩性）和确保一致的孔隙率。
+
+两个趋势非常重要：
+
+\begin{enumerate}
+    \item 页岩含量使点从砂岩线向右移动（中子孔隙率增加）； 它显然向白云岩移动
+    \item 含气区将点向左移动（中子孔隙率降低）；它转向低中子孔隙率。
+\end{enumerate}
+
+图\ref{fig20}中的例子展示了三种测量数据的结果。
+
+\paragraph{5.6.2.2 普适的数值解法}
+
+该解决方案使用测量的伽马-伽马密度和中子孔隙率作为输入。如果地层由方解石、白云石和流体组成，则线性方程\ref{eq25},\ref{eq26}可以求解未知的体积分数，包括孔隙率。
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=15cm]{figures/fig21.jpg}
+    \caption{碳酸盐岩部分：左曲线是伽马-伽马密度测量 ($\rho$) 和石灰石校准中子记录（$\Phi_N$）；使用来自 \textit{Asquith and Krygowski (2004)} 的数据组成的剖面。右图是页岩（来自伽玛测井）、石灰岩、白云岩的综合解释结果和孔隙率（来自联合伽马-伽马-中子计算）和流体饱和度（来自电阻率测量）作为累积图。}
+    \label{fig21}
+\end{figure}
+
+图\ref{fig21}中的例子显示了一个复合碳酸盐岩剖面\footnote[3]{一些部分来自原始数据且用于例子}。数据是经AAPG许可，摘自\textit{"Basic Well Log Analysis"}, \textit{Asquith and Krygowski (2004)}。 该剖面由具有混合岩性的碳酸盐岩组成。
+
+核心部分显示了破裂的白云岩；一部分微晶灰岩。两个“孔隙率敏感记录”（密度和中子孔隙率）表明孔隙率的变化，但测量值可能受到变化的岩石成分影响（白云石-方解石含量）。
+
+对于岩石成分体积分数的计算，使用以下方法：
+
+\begin{itemize}
+    \item RHOB-体密度测量，$g/cm^3$（伽马-伽马测量）
+    \item NPHI-中子孔隙率测量（灰岩校正中子测量）
+    \item GR-页岩估计的伽马辐射测量
+    \item Rt-电阻率测量水饱和度
+\end{itemize}
+
+基质成分和孔隙率组合计算可以从数学矩阵反演得到：
+
+对于给定的模型（方解石/灰岩-白云岩-孔隙水）写成矩阵形式的等式是：
+
+\begin{equation}
+    \begin{bmatrix}
+        RHOB \\ NPHI\\ 1.00
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        2.71 & 2.87 & 1.05 \\ 0.00 & 0.04 & 1.00 \\ 1.00 & 1.00 & 1.00
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        V_{\text{方解石}} \\ V_{\text{白云石}} \\ \Phi
+    \end{bmatrix} \label{eq27} \\
+\end{equation}
+
+将矩阵取逆：
+
+\begin{equation}
+    \begin{bmatrix}
+        V_{\text{方解石}} \\ V_{\text{白云石}} \\ \Phi
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        -4.240 & -8.039 & 12.491 \\ 4.417 & 7.332 & -11.970 \\ -0.177 & 0.707 & 0.479
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        \rho \\ \Phi_N \\ 1
+    \end{bmatrix} \label{eq28} \\
+\end{equation}
+
+如果对于一个9220ft深，记录$\rho =2.668g/cm^3$和$\Phi_N=0.095$，计算是
+
+\begin{equation}\label{eq28}
+    \begin{split}
+        V_{\mbox{方解石}}&=-4.240\cdot2.668-8.3039\cdot0.095+12.491=0.414 \\
+        V_{\mbox{白云石}}&=4.417\cdot 2.668+7.332\cdot 0.095-11.970=0.511 \\
+        \Phi &= -0.177\cdot 2.668+0.707\cdot 0.095+0.479=0.075
+    \end{split}
+\end{equation}
+
+图\ref{fig21}右部分将结果显示为石灰岩，白云岩的体积分数，和孔隙率。 注意高孔隙率的趋势是与剖面的白云岩部分相关。
+
+线性响应方程组可以推广到由 n 个不同的组分（固体、流体）组成的岩石。 对于任何测量的整体特性g 遵循线性响应方程，结果：
+
+\begin{equation}\label{eq30}
+    g_m=\sum_{i=1}^{n}V_i\cdot g_{m,i} \quad \sum_{i=1}^nV_i=1
+\end{equation}
+
+$g_m$是利用m方法测量的整体特性，$g_{mj}$是m方法测量的i成分的性质，$V_i$是i成分的体积分数。
+
+这代表了一个$m+1$个独立变量的线性方程组。是一个$n=m+1$维矩阵。可以利用逆矩阵(\textit{Doveton (1986)})求解：
+
+响应方程\ref{eq30}写成测量矩阵\textbf{M}
+\begin{equation}\label{eq31}
+    \bm{M=RV}
+\end{equation}
+
+\textbf{R}是响应矩阵，\textbf{V}是体积矩阵。数据解释结果为：
+
+\begin{equation}\label{eq32}
+    \bm{V=R^{-1}M}
+\end{equation}
+
+$R^{-1}$是逆矩阵。
 
 \end{document}
