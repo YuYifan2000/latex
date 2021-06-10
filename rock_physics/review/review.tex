@@ -4,6 +4,7 @@
 \usepackage{xeCJK}
 \usepackage{geometry}
 \usepackage[colorlinks,linkcolor=blue]{hyperref}
+\usepackage{indentfirst}
 
 \geometry{left=2cm} 
 \geometry{bottom=2cm} 
@@ -14,22 +15,60 @@
 \setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
 \renewcommand{\baselinestretch}{1.5}
 
-\title{Review on \textit{Rapid Forward Modelling of Logging-While-Drilling Neutron-Gamma Density Measurements}}
+
+
+\title{\vspace{-2cm}\textbf{Review on \textit{Rapid Forward Modelling of Logging-While-Drilling Neutron-Gamma Density Measurements}}}
 \author{余一凡}
 \date{\today}
 
 \begin{document}
 
     \maketitle
+
     \section{Background}
+
     I choose the paper named \href{https://library.seg.org/doi/10.1190/geo2018-0142.1}{\textit{"Rapid Forward Modelling of Logging-While-Drilling Neutron-Gamma Density Measurements"}}, written by \textit{Mathilde Luycx and Carlos Torres-Verdin} \footnote{The University of Texas, Austin}.
     The article is published on \href{https://seg.org/Publications/Journals/Geophysics}{\textit{Geophysics}} (Volume 83, Issue 6), the publisher of which is \textit{Society of Exploration Geophysicists}, in 2018.
-    My previous translate part of homework is related with Gamma-ray emitting from rocks, it's mainly used in exploration geophysics. Therefore, I choose this paper which focuses on advancing the speed of gamma-ray logging technology.
-    \section{Main Techiniques and Results}
+    My previous translate part of homework is related with Gamma-ray emitting from rocks, it's mainly used in exploration geophysics. 
+    In the chapter, the author talks about the Gamma-Gamma way to measure density and the Neutron way to measure porosity. In this paper, he uses Neutron-Gamma way to measure Density, it's quite advanced and novel.
+    Therefore, I choose this paper which focuses on boosting the speed of gamma-ray logging technology.
+    
+    \section{Contents of the Article}
+
+    Using neutron source in radioactive logging can detect the lithos without chemical nuclear source. In the real practice, there are lots of perturbing parameters. Like the environment, the position of the detector, the properties of layers and so on would have negative effect on the accuracy of the result.
+    It also takes time to analyse the data collected.
+
+    To solve the problems listed above, the conventional methods are fast numerical inversion and lots of approximations. 
+    The author proposes a fast way that makes Logging-While-Drilling possible. He develops a Fast Forward Modelling combining simulation and Flux Sensitivity Functions(FSFs).
+    To convert data to density, author also develops Density Estimation Algorithm.
+
+    To validate, the author uses several data from various situations to estimate the density. He benchmark his fast-forward algorithm against Monte Carlo simulations using several synthetic challenging cases, including a vertical well with complex mineral compositon, $45^\circ$ and $85^\circ$ deviated wells. thinly-bedded formations, and piston-like invasion.
+    
+    The speed of calculation with only 1\% error 500,000 times faster. This makes the title \textit{"Logging-While-Drilling"}.
 
     \section{What I learned}
 
+    Nowadays, with high development of computer, numerical simulation is more and more important. In developing the new method in real-world application, numerical modelling is a necessary step. We should derive the math equations and then write the code to run in the computer. 
+    We can find the shortcomings and further modify our new method. We must exploit the benefits of computing and modelling.
+    
+    Monte Carlo method are a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results. The underlying concept is to use randomness to solve problems that might be deterministic in principle. They are often used in physical and mathematical problems and are most useful when it is difficult or impossible to use other approaches. 
+    In the future research, we could also use Monte Carlo method to supplement our project.
+
     \section{Source Reliability}
 
+    The data used by the author to validate his software is synthetic, not the real data. Despite his result is trustworthy, but as the algorithm is proposed for practical use, his source is not reliable.
+
+    In the real production process, there are more noisy data and perturbing parameters, adding difficulties to data analysis. We need a solid software, at least it should use real logging record to test its performance.
+
+    In the absence of real logging data, the source is unreliable.
+
     \section{Conclusions Validity}
+
+    I trust in the author's conclusion. I believe that advanced simulation model, together with high proficiency in multi-core CPU or GPU, could reduce the time needed in data analysis eventually to the degree of nearly Logging-While-Drilling. Especially using synthetic data could make the task more easily.
+    
+    However, a common problem lies in the compensation to the speed, does the error rate increase with the computing speed increase? In the author's Conclusion part, he mentions that compare with conventional method some results have higher error range. 
+    This fits my expectations, high speed would bring some error. That's the main reason I choose to trust in author's conclusions. He doesn't choose to make his all results perfect or better than conventional methods. Even in practical data, software would perform better.
+
+    I believe as the computer science develops, there are more algorithms emerging and the new modelling method could replace the conventional inversion one.  
+
     \end{document}
